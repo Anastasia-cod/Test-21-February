@@ -2,20 +2,67 @@
 {
     static void Main(string[] args)
     {
-        Lesson2_Task3();
-
+        Lesson2_Task1();
+        Lesson2_Task1();
+        Lesson2_Task1();
+        Lesson2_Task1();
+        Lesson2_Task1();
     }
 
 
     public static void Lesson1_Task1()
     {
-        string name = Console.ReadLine();
+        char name = char.Parse(Console.ReadLine());
         Console.WriteLine("Hello, World!");
         Console.WriteLine("Hello, " + name);
     }
 
 
-    
+    public static void Lesson2_Task1()
+    {
+        int operand1 = 25;
+        int operand2 = 5;
+
+        string sign = Console.ReadLine();
+        int result;
+
+        switch(sign)
+        {
+            case "+":
+                result = operand1 + operand2;
+                Console.WriteLine($"addition operation: {operand1} {sign} {operand2} = {result}");
+                break;
+
+            case "-":
+                result = operand1 - operand2;
+                Console.WriteLine($"subtraction operation: {operand1} {sign} {operand2} = {result}");
+                break;
+
+            case "*":
+                result = operand1 * operand2;
+                Console.WriteLine($"multiplication operation: {operand1} {sign} {operand2} = {result}");
+                break;
+
+            case "/":
+                if ((operand2 != 0))
+                {
+                    result = operand1 / operand2;
+                    Console.WriteLine($"division operation: {operand1} {sign} {operand2} = {result}");
+                }
+                else
+                {
+                    Console.WriteLine($"Error! Dividing by Zero impossible");
+                }   
+                break;
+
+            default:
+                Console.WriteLine($"The calculator can only perform operations of addition, subtraction, division, multiplication.\nPlease enter a sign only for available operations.");
+                break;
+
+        } 
+    }
+
+
     public static void Lesson2_Task2()
     {
         int number = int.Parse(Console.ReadLine());
