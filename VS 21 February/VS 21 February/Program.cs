@@ -2,11 +2,8 @@
 {
     static void Main(string[] args)
     {
-        Lesson2_Task1();
-        Lesson2_Task1();
-        Lesson2_Task1();
-        Lesson2_Task1();
-        Lesson2_Task1();
+        Lesson2_Task4_Way2();
+
     }
 
 
@@ -153,8 +150,38 @@
 
 
 
+    public static void Lesson2_Task4_Way1()
+    {
+        int number = int.Parse(Console.ReadLine());
+
+        if (number % 2 == 0)
+        {
+            Console.WriteLine($"The entered number is even");
+        }
+        else
+        {
+            Console.WriteLine($"The entered number is odd");
+        }
+ 
+    }
 
 
-    
+    public static void Lesson2_Task4_Way2()
+    {
+        int number = int.Parse(Console.ReadLine());
+
+        switch (number % 2)
+        {
+            case 0:
+                Console.WriteLine($"The entered number is even");
+                break;
+            default:
+                Console.WriteLine($"The entered number is odd");
+                break;
+        }
+
+    }
+
+
 
 }
