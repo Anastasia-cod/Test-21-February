@@ -3,9 +3,7 @@
     static void Main(string[] args)
     {
         Lesson2_Task4_Way2();
-
     }
-
 
     public static void Lesson1_Task1()
     {
@@ -14,12 +12,10 @@
         Console.WriteLine("Hello, " + name);
     }
 
-
     public static void Lesson2_Task1()
     {
         int operand1 = 25;
         int operand2 = 5;
-
         string sign = Console.ReadLine();
         int result;
 
@@ -29,17 +25,14 @@
                 result = operand1 + operand2;
                 Console.WriteLine($"addition operation: {operand1} {sign} {operand2} = {result}");
                 break;
-
             case "-":
                 result = operand1 - operand2;
                 Console.WriteLine($"subtraction operation: {operand1} {sign} {operand2} = {result}");
                 break;
-
             case "*":
                 result = operand1 * operand2;
                 Console.WriteLine($"multiplication operation: {operand1} {sign} {operand2} = {result}");
                 break;
-
             case "/":
                 if ((operand2 != 0))
                 {
@@ -51,14 +44,11 @@
                     Console.WriteLine($"Error! Dividing by Zero impossible");
                 }   
                 break;
-
             default:
                 Console.WriteLine($"The calculator can only perform operations of addition, subtraction, division, multiplication.\nPlease enter a sign only for available operations.");
                 break;
-
         } 
     }
-
 
     public static void Lesson2_Task2()
     {
@@ -86,7 +76,6 @@
         }
     }
 
-
     public static void Lesson2_Task3()
     {
         string badWeather_1 = "cold";
@@ -99,7 +88,6 @@
         string goodWeather_3 = "warm";
         string goodWeather_4 = "chilly";
         string goodWeather_5 = "thaw";
-
         string weather = Console.ReadLine();
 
         if ((weather == "холодно") || (weather == "холодная"))
@@ -148,8 +136,6 @@
         }
     }
 
-
-
     public static void Lesson2_Task4_Way1()
     {
         int number = int.Parse(Console.ReadLine());
@@ -162,9 +148,7 @@
         {
             Console.WriteLine($"The entered number is odd");
         }
- 
     }
-
 
     public static void Lesson2_Task4_Way2()
     {
@@ -179,9 +163,5 @@
                 Console.WriteLine($"The entered number is odd");
                 break;
         }
-
     }
-
-
-
 }
