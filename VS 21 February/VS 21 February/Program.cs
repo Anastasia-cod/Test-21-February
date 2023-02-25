@@ -4,7 +4,7 @@ class Hello
 {
     static void Main(string[] args)
     {
-        //VS_21_February.Lesson3Tasks.Task3(); 
+        VS_21_February.Lesson3.Task3();
     }
 
     public static void Lesson1_Task1()

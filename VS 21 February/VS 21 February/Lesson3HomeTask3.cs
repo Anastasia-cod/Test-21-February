@@ -3,7 +3,7 @@ namespace VS_21_February
 {
     internal class Lesson3
     {
-        public static void Task1()
+        public static void Task0()
         {
             int[] numbers = { 0, 2, 5, 7, 9, 12, 13, 15, 0, 12, 9 };
             Console.WriteLine($"Enter integer number from 0 to 15 to check if this number is in array");
@@ -22,7 +22,7 @@ namespace VS_21_February
             Console.WriteLine($"The entered number {enteredNumber} occurs {result} time in the array");
         }
 
-        public static void Task2()
+        public static void Task1()
         {
             int[] numbers = { 0, 2, 5, 7, 9, 12, 13, 15, 0, 12, 9 };
             Console.WriteLine($"Enter integer number from 0 to 15 to delete from array, if this number is in the array");
@@ -37,7 +37,7 @@ namespace VS_21_February
             }
         }
 
-        public static void Task3()
+        public static void Task2()
         {
             Random random = new Random();
 
@@ -88,7 +88,43 @@ namespace VS_21_February
 
             double avgSumm = (double)summ / numbers.Length;
             Console.WriteLine($" Average summ is {avgSumm} ");
+        }
 
+        public static void Task3()
+        {
+            int[] arraysFirst = { 0, 6, 12, 25, 1};
+            int[] arraysSecond = { 4, 3, 28, 2, 8};
+            int summArrayFirst = 0;
+            int summArraySecond = 0;
+
+            for (int i = 0; i < arraysFirst.Length; i++)
+            {
+                Console.Write(arraysFirst[i] + " ");
+                summArrayFirst += arraysFirst[i];
+            }
+
+            for (int i = 0; i < arraysSecond.Length; i++)
+            {
+                Console.Write(arraysSecond[i] + " ");
+                summArraySecond += arraysSecond[i];
+            }
+
+            double avgSummArrayFirst = (double)summArrayFirst / arraysFirst.Length;
+            double avgSummArraySecond = (double)summArraySecond / arraysSecond.Length;
+            Console.WriteLine($" Average summ of  First array is {avgSummArrayFirst} \n Average summ of  Second array is {avgSummArraySecond} ");
+
+            if (avgSummArrayFirst > avgSummArraySecond)
+            {
+                Console.WriteLine($"The average summ of first array {avgSummArrayFirst} is bigger than average summ of second array {avgSummArraySecond} ");
+            }
+            else if (avgSummArraySecond > avgSummArrayFirst)
+            {
+                Console.WriteLine($"The average summ of first array {avgSummArraySecond} is bigger than average summ of second array {avgSummArrayFirst} ");
+            }
+            else
+            {
+                Console.WriteLine($"The average summ of first array {avgSummArrayFirst} equals average summ of second array {avgSummArraySecond} ");
+            }
         }
     }
 }
