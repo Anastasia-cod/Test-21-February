@@ -1,8 +1,14 @@
-﻿class Hello
+﻿using System;
+
+class Hello
 {
     static void Main(string[] args)
     {
-        Lesson2_Task4_Way2();
+        VS_21_February.Lesson3.Task0Way1();
+        VS_21_February.Lesson3.Task0Way2();
+        VS_21_February.Lesson3.Task1();
+        VS_21_February.Lesson3.Task2();
+        VS_21_February.Lesson3.Task3();
     }
 
     public static void Lesson1_Task1()
