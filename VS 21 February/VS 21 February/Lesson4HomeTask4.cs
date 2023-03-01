@@ -64,6 +64,31 @@ namespace VS_21_February
             Console.WriteLine(wordsBefore);
             Console.WriteLine(wordsAfter);
         }
+
+        /// <summary>
+        /// It is necessary to remove the word "bad" using the substring method. After that, using the insert command, create a string with the value: Good day!!!!!!!!!!.
+        /// Replace last "!" on "?"
+        /// </summary>
+        public static void Task4()
+        {
+            string wordsTask4 = "Bad day";
+            string replace = "Good";
+            string symbols = "!!!!!!!!!";
+            string question = "?";
+
+            int firstIndex = wordsTask4.IndexOf("Bad");
+            string wordsDelete = wordsTask4.Substring(firstIndex + 3);
+            string wordsInsert = wordsDelete.Insert(0, replace);
+            string wordsAddSymbols = wordsInsert.Insert(wordsInsert.Length, symbols);
+
+            Console.WriteLine(wordsAddSymbols);
+
+            int lastIndex = wordsAddSymbols.LastIndexOf("!");
+            string wordsUpdate = wordsAddSymbols.Substring(0, lastIndex);
+            string wordsFinal = wordsUpdate.Insert(wordsUpdate.Length, question);
+
+            Console.WriteLine(wordsFinal);
+        }
     }
 }
 
