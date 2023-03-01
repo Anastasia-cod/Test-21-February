@@ -36,7 +36,6 @@ namespace VS_21_February
                 {
                     wordsTask1 = wordsTask1.Replace(i.ToString(), "");
                 }
-
             }
 
             Console.WriteLine(wordsTask1.Replace("test", "testing"));
@@ -47,8 +46,23 @@ namespace VS_21_February
         /// Welcome to the TMS lesons.
         /// </summary>
         public static void Task2()
-		{           
+        {
             Console.WriteLine("Welcome " + "to " + "the " + "TMS " + "lessons.");
+        }
+
+        /// <summary>
+        /// It is necessary to find "abc" in the given string, writing everything before these characters into the first variable, as well as everything after them into the second.
+        /// </summary>
+        public static void Task3()
+        {
+            string wordsTask3 = "teamwithsomeofexcersicesabcwanttomakeitbetter.";
+            int index = wordsTask3.IndexOf("abc");
+
+            string wordsBefore = wordsTask3.Substring(0, index);
+            string wordsAfter = wordsTask3.Substring(index + 3);
+
+            Console.WriteLine(wordsBefore);
+            Console.WriteLine(wordsAfter);
         }
     }
 }

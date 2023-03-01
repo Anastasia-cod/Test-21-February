@@ -4,9 +4,9 @@ class Hello
 {
     static void Main(string[] args)
     {
-        VS_21_February.Lesson4.Task1_1();
-        VS_21_February.Lesson4.Task1_2();
-        VS_21_February.Lesson4.Task2();        
+        VS_21_February.Lesson4.Task3();
+        //VS_21_February.Lesson4.Task1_2();
+        //VS_21_February.Lesson4.Task2();        
     }
 
     public static void Lesson1_Task1()
