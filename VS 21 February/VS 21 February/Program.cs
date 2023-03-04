@@ -96,7 +96,7 @@ class Hello
 
         atm_1.DepositingMoney(1, 1, 1);
 
-        atm_1.WithdrawalMoney(340);
+        atm_1.WithdrawalMoney(350);
     }
 
     public static void Lesson1_Task1()

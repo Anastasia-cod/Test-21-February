@@ -17,15 +17,15 @@ namespace VS_21_February
 			return currentSumm;
 		}
 
-        public double WithdrawalMoney(double summOfMoney)
-        {
-			if(summOfMoney > currentSumm)
-			{
+		public double WithdrawalMoney(double summOfMoney)
+		{
+            if (summOfMoney > currentSumm)
+            {
                 Console.WriteLine($"Error! Not enough money. Available summ of money on the card is {currentSumm}");
             }
-			else
-			{
-                currentSumm -= summOfMoney;               
+            else
+            {
+                currentSumm -= summOfMoney;
             }
 
             return currentSumm;

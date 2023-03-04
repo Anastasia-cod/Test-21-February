@@ -3,13 +3,13 @@ namespace VS_21_February
 {
 	public class CashMachine
 	{
-		public int countOfDenomination_20;
+        public int countOfDenomination_20;
         public int countOfDenomination_50;
         public int countOfDenomination_100;
         public int allMoney;
 
         public CashMachine(int countOfDenomination_20, int countOfDenomination_50, int countOfDenomination_100)
-		{
+        {
             this.countOfDenomination_20 = countOfDenomination_20;
             this.countOfDenomination_50 = countOfDenomination_50;
             this.countOfDenomination_100 = countOfDenomination_100;
