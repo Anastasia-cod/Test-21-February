@@ -4,7 +4,64 @@ class Hello
 {
     static void Main(string[] args)
     {
-        //VS_21_February.Lesson4.Task5();       
+        //First home task
+        VS_21_February.Phone iphone_13 = new VS_21_February.Phone();
+
+        iphone_13.number = "13";
+        iphone_13.model = "Iphone";
+        iphone_13.weight = 0.173;
+
+        VS_21_February.Phone samsung_Galaxy = new VS_21_February.Phone();
+
+        samsung_Galaxy.number = "S 23";
+        samsung_Galaxy.model = "Samsung Galaxy S Ultra";
+        samsung_Galaxy.weight = 0.234;
+
+        VS_21_February.Phone huawei = new VS_21_February.Phone();
+
+        huawei.number = "P50";
+        huawei.model = "Huawei Pro";
+        huawei.weight = 0.195;
+
+        Console.WriteLine($"Phone 1: number {iphone_13.number}, model {iphone_13.model}, weight {iphone_13.weight}");
+        Console.WriteLine($"Phone 2: number {samsung_Galaxy.number}, model {samsung_Galaxy.model}, weight {samsung_Galaxy.weight}");
+        Console.WriteLine($"Phone 3: number {huawei.number}, model {huawei.model}, weight {huawei.weight}");
+
+        //Method ReceiveCall
+        iphone_13.ReceiveCall("Masha");
+
+        samsung_Galaxy.ReceiveCall("Michael");
+
+        huawei.ReceiveCall("Elizaveta");
+
+        //Method GetNumber
+        iphone_13.phoneNumber = 80441371010;
+        iphone_13.GetNumber();
+
+        Console.WriteLine(iphone_13.phoneNumber);
+
+        samsung_Galaxy.phoneNumber = 80293386767;
+        samsung_Galaxy.GetNumber();
+
+        Console.WriteLine(samsung_Galaxy.phoneNumber);
+
+        huawei.phoneNumber = 80449480999;
+        huawei.GetNumber();
+
+        Console.WriteLine(huawei.phoneNumber);
+
+        //Constructor with 2 parametres
+        VS_21_February.Phone lenovo = new("K14", "Lenovo");
+
+        Console.WriteLine($"Phone 4: number {lenovo.number}, model {lenovo.model}, weight {lenovo.weight}");
+
+        //overloaded method ReceiveCall
+        iphone_13.ReceiveCall("Nastya", 80447222525);
+
+        //Method SendMessage
+        samsung_Galaxy.SendMessage(80293334567, 80447568990, 80445682130, 80297775507);
+
+        huawei.SendMessage();
     }
 
     public static void Lesson1_Task1()
