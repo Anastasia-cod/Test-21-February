@@ -8,6 +8,7 @@ namespace VS_21_February
 
 		public CreditCard()
 		{
+
 		}
 
 		public double AccrualMoney(double summOfMoney)

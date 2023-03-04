@@ -4,7 +4,7 @@ class Hello
 {
     static void Main(string[] args)
     {
-        //First home task
+        //First Home Task
         VS_21_February.Phone iphone_13 = new VS_21_February.Phone();
 
         iphone_13.number = "13";
@@ -67,21 +67,21 @@ class Hello
         VS_21_February.CreditCard card_1 = new VS_21_February.CreditCard();
 
         card_1.accountNumber = "BY11ALFA100110DA7U9910101000";
-        card_1.currentSumm = 50000.5;
+        card_1.currentSumm = 51000.5;
 
         VS_21_February.CreditCard card_2 = new VS_21_February.CreditCard();
 
         card_2.accountNumber = "BY24ALFA200160PP7U0670101001";
-        card_2.currentSumm = 142000.9;
+        card_2.currentSumm = 145000.9;
 
         VS_21_February.CreditCard card_3 = new VS_21_February.CreditCard();
 
         card_3.accountNumber = "BY97ALFA110960SE7K0990401003";
-        card_3.currentSumm = 27000.3;
+        card_3.currentSumm = 28000.3;
 
-        card_1.AccrualMoney(2900.5);
+        card_1.AccrualMoney(8000.5);
 
-        card_2.AccrualMoney(14600);
+        card_2.AccrualMoney(14700);
 
         card_3.WithdrawalMoney(30000);
 
@@ -91,6 +91,12 @@ class Hello
 
         card_3.CurrentStatus();
 
+        //Third Home Task partially performed
+        VS_21_February.CashMachine atm_1 = new(1, 1, 1);
+
+        atm_1.DepositingMoney(1, 1, 1);
+
+        atm_1.WithdrawalMoney(340);
     }
 
     public static void Lesson1_Task1()
