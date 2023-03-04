@@ -62,6 +62,35 @@ class Hello
         samsung_Galaxy.SendMessage(80293334567, 80447568990, 80445682130, 80297775507);
 
         huawei.SendMessage();
+
+        //Second Home Task
+        VS_21_February.CreditCard card_1 = new VS_21_February.CreditCard();
+
+        card_1.accountNumber = "BY11ALFA100110DA7U9910101000";
+        card_1.currentSumm = 50000.5;
+
+        VS_21_February.CreditCard card_2 = new VS_21_February.CreditCard();
+
+        card_2.accountNumber = "BY24ALFA200160PP7U0670101001";
+        card_2.currentSumm = 142000.9;
+
+        VS_21_February.CreditCard card_3 = new VS_21_February.CreditCard();
+
+        card_3.accountNumber = "BY97ALFA110960SE7K0990401003";
+        card_3.currentSumm = 27000.3;
+
+        card_1.AccrualMoney(2900.5);
+
+        card_2.AccrualMoney(14600);
+
+        card_3.WithdrawalMoney(30000);
+
+        card_1.CurrentStatus();
+
+        card_2.CurrentStatus();
+
+        card_3.CurrentStatus();
+
     }
 
     public static void Lesson1_Task1()

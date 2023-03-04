@@ -27,9 +27,9 @@ namespace VS_21_February
         }
 
         public void ReceiveCall(string nameOfPerson)
-		{
+        {
             callerName = nameOfPerson;
-			Console.WriteLine($"Calling: {callerName}");
+            Console.WriteLine($"Calling: {callerName}");
         }
 
         public long GetNumber()
@@ -49,7 +49,7 @@ namespace VS_21_February
         {
            if (phoneNumbers.Length == 0)
             {
-                Console.WriteLine($"\nError! There is no phoneNumber");
+                Console.WriteLine($"\nError! There is no phone numbers");
             }
 
             foreach (long number in phoneNumbers)
