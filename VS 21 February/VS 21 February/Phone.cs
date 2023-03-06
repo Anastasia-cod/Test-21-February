@@ -10,11 +10,11 @@ namespace VS_21_February
 		public long phoneNumber;
 
         public Phone(string number, string model, double weight)
-		{
-			this.number = number;
-			this.model = model;
-			this.weight = weight;
-		}
+        {
+            this.number = number;
+            this.model = model;
+            this.weight = weight;
+        }
 
         public Phone(string number, string model) : this(number, model, 0)
         {

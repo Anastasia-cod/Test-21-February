@@ -17,6 +17,7 @@ namespace VS_21_February
             return currentSumm;
         }
 
+        //I tried, but didn't succeed, so I'll just leave it at that
         public double WithdrawalMoney(double summOfMoney)
         {
             if (summOfMoney > currentSumm)
