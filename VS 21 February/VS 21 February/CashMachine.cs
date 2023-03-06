@@ -25,6 +25,7 @@ namespace VS_21_February
             return allMoney;
         }
 
+        //I tried, but didn't succeed, so I'll just leave it at that
         public void WithdrawalMoney(int summOfMoney)
         {
             bool result = allMoney >= summOfMoney;
