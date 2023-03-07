@@ -4,7 +4,99 @@ class Hello
 {
     static void Main(string[] args)
     {
-        //VS_21_February.Lesson4.Task5();       
+        //First Home Task
+        VS_21_February.Phone iphone_13 = new VS_21_February.Phone();
+
+        iphone_13.number = "13";
+        iphone_13.model = "Iphone";
+        iphone_13.weight = 0.173;
+
+        VS_21_February.Phone samsung_Galaxy = new VS_21_February.Phone();
+
+        samsung_Galaxy.number = "S 23";
+        samsung_Galaxy.model = "Samsung Galaxy S Ultra";
+        samsung_Galaxy.weight = 0.234;
+
+        VS_21_February.Phone huawei = new VS_21_February.Phone();
+
+        huawei.number = "P50";
+        huawei.model = "Huawei Pro";
+        huawei.weight = 0.195;
+
+        Console.WriteLine($"Phone 1: number {iphone_13.number}, model {iphone_13.model}, weight {iphone_13.weight}");
+        Console.WriteLine($"Phone 2: number {samsung_Galaxy.number}, model {samsung_Galaxy.model}, weight {samsung_Galaxy.weight}");
+        Console.WriteLine($"Phone 3: number {huawei.number}, model {huawei.model}, weight {huawei.weight}");
+
+        //Method ReceiveCall
+        iphone_13.ReceiveCall("Masha");
+
+        samsung_Galaxy.ReceiveCall("Michael");
+
+        huawei.ReceiveCall("Elizaveta");
+
+        //Method GetNumber
+        iphone_13.phoneNumber = 80441371010;
+        iphone_13.GetNumber();
+
+        Console.WriteLine(iphone_13.phoneNumber);
+
+        samsung_Galaxy.phoneNumber = 80293386767;
+        samsung_Galaxy.GetNumber();
+
+        Console.WriteLine(samsung_Galaxy.phoneNumber);
+
+        huawei.phoneNumber = 80449480999;
+        huawei.GetNumber();
+
+        Console.WriteLine(huawei.phoneNumber);
+
+        //Constructor with 2 parametres
+        VS_21_February.Phone lenovo = new("K14", "Lenovo");
+
+        Console.WriteLine($"Phone 4: number {lenovo.number}, model {lenovo.model}, weight {lenovo.weight}");
+
+        //overloaded method ReceiveCall
+        iphone_13.ReceiveCall("Nastya", 80447222525);
+
+        //Method SendMessage
+        samsung_Galaxy.SendMessage(80293334567, 80447568990, 80445682130, 80297775507);
+
+        huawei.SendMessage();
+
+        //Second Home Task
+        VS_21_February.CreditCard card_1 = new VS_21_February.CreditCard();
+
+        card_1.accountNumber = "BY11ALFA100110DA7U9910101000";
+        card_1.currentSumm = 51000.5;
+
+        VS_21_February.CreditCard card_2 = new VS_21_February.CreditCard();
+
+        card_2.accountNumber = "BY24ALFA200160PP7U0670101001";
+        card_2.currentSumm = 145000.9;
+
+        VS_21_February.CreditCard card_3 = new VS_21_February.CreditCard();
+
+        card_3.accountNumber = "BY97ALFA110960SE7K0990401003";
+        card_3.currentSumm = 28000.3;
+
+        card_1.AccrualMoney(8000.5);
+
+        card_2.AccrualMoney(14700);
+
+        card_3.WithdrawalMoney(30000);
+
+        card_1.CurrentStatus();
+
+        card_2.CurrentStatus();
+
+        card_3.CurrentStatus();
+
+        //Third Home Task partially performed
+        VS_21_February.CashMachine atm_1 = new(1, 1, 1);
+
+        atm_1.DepositingMoney(1, 1, 1);
+
+        atm_1.WithdrawalMoney(350);
     }
 
     public static void Lesson1_Task1()
