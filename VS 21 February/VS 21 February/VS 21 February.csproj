@@ -8,4 +8,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Hometask 3-5\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Hometask 3-5\" />
+  </ItemGroup>
 </Project>

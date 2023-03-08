@@ -4,99 +4,109 @@ class Hello
 {
     static void Main(string[] args)
     {
-        //First Home Task
-        VS_21_February.Phone iphone_13 = new VS_21_February.Phone();
+        //HomeTask 1 lesson 6
+        VS_21_February.Triangles triangle = new VS_21_February.TriangleBuilder().CreateTriangle(10, 8, 8);
 
-        iphone_13.number = "13";
-        iphone_13.model = "Iphone";
-        iphone_13.weight = 0.173;
+        Console.Write(triangle.GetSquare());
 
-        VS_21_February.Phone samsung_Galaxy = new VS_21_February.Phone();
+        VS_21_February.IsoscelesTriangle triangle_1 = new VS_21_February.IsoscelesTriangle(6, 8, 8);
+        Console.Write(triangle_1.GetSquare());
 
-        samsung_Galaxy.number = "S 23";
-        samsung_Galaxy.model = "Samsung Galaxy S Ultra";
-        samsung_Galaxy.weight = 0.234;
 
-        VS_21_February.Phone huawei = new VS_21_February.Phone();
+        ////Home task lesson 5
+        ////First Home Task
+        //VS_21_February.Phone iphone_13 = new VS_21_February.Phone();
 
-        huawei.number = "P50";
-        huawei.model = "Huawei Pro";
-        huawei.weight = 0.195;
+        //iphone_13.number = "13";
+        //iphone_13.model = "Iphone";
+        //iphone_13.weight = 0.173;
 
-        Console.WriteLine($"Phone 1: number {iphone_13.number}, model {iphone_13.model}, weight {iphone_13.weight}");
-        Console.WriteLine($"Phone 2: number {samsung_Galaxy.number}, model {samsung_Galaxy.model}, weight {samsung_Galaxy.weight}");
-        Console.WriteLine($"Phone 3: number {huawei.number}, model {huawei.model}, weight {huawei.weight}");
+        //VS_21_February.Phone samsung_Galaxy = new VS_21_February.Phone();
 
-        //Method ReceiveCall
-        iphone_13.ReceiveCall("Masha");
+        //samsung_Galaxy.number = "S 23";
+        //samsung_Galaxy.model = "Samsung Galaxy S Ultra";
+        //samsung_Galaxy.weight = 0.234;
 
-        samsung_Galaxy.ReceiveCall("Michael");
+        //VS_21_February.Phone huawei = new VS_21_February.Phone();
 
-        huawei.ReceiveCall("Elizaveta");
+        //huawei.number = "P50";
+        //huawei.model = "Huawei Pro";
+        //huawei.weight = 0.195;
 
-        //Method GetNumber
-        iphone_13.phoneNumber = 80441371010;
-        iphone_13.GetNumber();
+        //Console.WriteLine($"Phone 1: number {iphone_13.number}, model {iphone_13.model}, weight {iphone_13.weight}");
+        //Console.WriteLine($"Phone 2: number {samsung_Galaxy.number}, model {samsung_Galaxy.model}, weight {samsung_Galaxy.weight}");
+        //Console.WriteLine($"Phone 3: number {huawei.number}, model {huawei.model}, weight {huawei.weight}");
 
-        Console.WriteLine(iphone_13.phoneNumber);
+        ////Method ReceiveCall
+        //iphone_13.ReceiveCall("Masha");
 
-        samsung_Galaxy.phoneNumber = 80293386767;
-        samsung_Galaxy.GetNumber();
+        //samsung_Galaxy.ReceiveCall("Michael");
 
-        Console.WriteLine(samsung_Galaxy.phoneNumber);
+        //huawei.ReceiveCall("Elizaveta");
 
-        huawei.phoneNumber = 80449480999;
-        huawei.GetNumber();
+        ////Method GetNumber
+        //iphone_13.phoneNumber = 80441371010;
+        //iphone_13.GetNumber();
 
-        Console.WriteLine(huawei.phoneNumber);
+        //Console.WriteLine(iphone_13.phoneNumber);
 
-        //Constructor with 2 parametres
-        VS_21_February.Phone lenovo = new("K14", "Lenovo");
+        //samsung_Galaxy.phoneNumber = 80293386767;
+        //samsung_Galaxy.GetNumber();
 
-        Console.WriteLine($"Phone 4: number {lenovo.number}, model {lenovo.model}, weight {lenovo.weight}");
+        //Console.WriteLine(samsung_Galaxy.phoneNumber);
 
-        //overloaded method ReceiveCall
-        iphone_13.ReceiveCall("Nastya", 80447222525);
+        //huawei.phoneNumber = 80449480999;
+        //huawei.GetNumber();
 
-        //Method SendMessage
-        samsung_Galaxy.SendMessage(80293334567, 80447568990, 80445682130, 80297775507);
+        //Console.WriteLine(huawei.phoneNumber);
 
-        huawei.SendMessage();
+        ////Constructor with 2 parametres
+        //VS_21_February.Phone lenovo = new("K14", "Lenovo");
 
-        //Second Home Task
-        VS_21_February.CreditCard card_1 = new VS_21_February.CreditCard();
+        //Console.WriteLine($"Phone 4: number {lenovo.number}, model {lenovo.model}, weight {lenovo.weight}");
 
-        card_1.accountNumber = "BY11ALFA100110DA7U9910101000";
-        card_1.currentSumm = 51000.5;
+        ////overloaded method ReceiveCall
+        //iphone_13.ReceiveCall("Nastya", 80447222525);
 
-        VS_21_February.CreditCard card_2 = new VS_21_February.CreditCard();
+        ////Method SendMessage
+        //samsung_Galaxy.SendMessage(80293334567, 80447568990, 80445682130, 80297775507);
 
-        card_2.accountNumber = "BY24ALFA200160PP7U0670101001";
-        card_2.currentSumm = 145000.9;
+        //huawei.SendMessage();
 
-        VS_21_February.CreditCard card_3 = new VS_21_February.CreditCard();
+        ////Second Home Task
+        //VS_21_February.CreditCard card_1 = new VS_21_February.CreditCard();
 
-        card_3.accountNumber = "BY97ALFA110960SE7K0990401003";
-        card_3.currentSumm = 28000.3;
+        //card_1.accountNumber = "BY11ALFA100110DA7U9910101000";
+        //card_1.currentSumm = 51000.5;
 
-        card_1.AccrualMoney(8000.5);
+        //VS_21_February.CreditCard card_2 = new VS_21_February.CreditCard();
 
-        card_2.AccrualMoney(14700);
+        //card_2.accountNumber = "BY24ALFA200160PP7U0670101001";
+        //card_2.currentSumm = 145000.9;
 
-        card_3.WithdrawalMoney(30000);
+        //VS_21_February.CreditCard card_3 = new VS_21_February.CreditCard();
 
-        card_1.CurrentStatus();
+        //card_3.accountNumber = "BY97ALFA110960SE7K0990401003";
+        //card_3.currentSumm = 28000.3;
 
-        card_2.CurrentStatus();
+        //card_1.AccrualMoney(8000.5);
 
-        card_3.CurrentStatus();
+        //card_2.AccrualMoney(14700);
 
-        //Third Home Task partially performed
-        VS_21_February.CashMachine atm_1 = new(1, 1, 1);
+        //card_3.WithdrawalMoney(30000);
 
-        atm_1.DepositingMoney(1, 1, 1);
+        //card_1.CurrentStatus();
 
-        atm_1.WithdrawalMoney(350);
+        //card_2.CurrentStatus();
+
+        //card_3.CurrentStatus();
+
+        ////Third Home Task partially performed
+        //VS_21_February.CashMachine atm_1 = new(1, 1, 1);
+
+        //atm_1.DepositingMoney(1, 1, 1);
+
+        //atm_1.WithdrawalMoney(350);
     }
 
     public static void Lesson1_Task1()
@@ -113,7 +123,7 @@ class Hello
         string sign = Console.ReadLine();
         int result;
 
-        switch(sign)
+        switch (sign)
         {
             case "+":
                 result = operand1 + operand2;
@@ -136,12 +146,12 @@ class Hello
                 else
                 {
                     Console.WriteLine($"Error! Dividing by Zero impossible");
-                }   
+                }
                 break;
             default:
                 Console.WriteLine($"The calculator can only perform operations of addition, subtraction, division, multiplication.\nPlease enter a sign only for available operations.");
                 break;
-        } 
+        }
     }
 
     public static void Lesson2_Task2()
