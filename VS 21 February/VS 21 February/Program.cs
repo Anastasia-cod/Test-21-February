@@ -1,5 +1,4 @@
 ﻿using System;
-
 class Hello
 {
     static void Main(string[] args)
@@ -14,6 +13,7 @@ class Hello
         Console.Write(triangle_2.GetSquare());
         Console.Write(triangle_3.GetSquare());
         Console.Write(triangle_4.GetSquare());
+
 
         ////Home task lesson 5
         ////First Home Task

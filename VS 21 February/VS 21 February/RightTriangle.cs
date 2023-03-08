@@ -12,9 +12,9 @@ namespace VS_21_February
         {
             Console.WriteLine("\nGet square Right Triangle");
 
-            if(firstSide > secondSide)
+            if (firstSide > secondSide)
             {
-                if(firstSide > thirdSide)
+                if (firstSide > thirdSide)
                 {
                     return GetSquareForRightTriangle(secondSide, thirdSide);
                 }
@@ -25,7 +25,7 @@ namespace VS_21_February
             }
             else
             {
-                if(secondSide > thirdSide)
+                if (secondSide > thirdSide)
                 {
                     return GetSquareForRightTriangle(firstSide, thirdSide);
                 }

@@ -16,7 +16,7 @@ namespace VS_21_February
             {
                 return GetSquareForIsoscelesTriangle(thirdSide, firstSide);
             }
-            else if(firstSide == thirdSide && firstSide != secondSide)
+            else if (firstSide == thirdSide && firstSide != secondSide)
             {
                 return GetSquareForIsoscelesTriangle(secondSide, firstSide);
             }
