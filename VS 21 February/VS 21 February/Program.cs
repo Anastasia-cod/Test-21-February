@@ -4,7 +4,7 @@ class Hello
     static void Main(string[] args)
     {
         //HomeTask 1 lesson 6
-        VS_21_February.Triangles triangle_1 = new VS_21_February.TriangleBuilder().CreateTriangle(5.5, 8, 5.5);
+        VS_21_February.Triangles triangle_1 = new VS_21_February.TriangleBuilder().CreateTriangle(5, 5, 8);
         VS_21_February.Triangles triangle_2 = new VS_21_February.TriangleBuilder().CreateTriangle(6, 6, 6);
         VS_21_February.Triangles triangle_3 = new VS_21_February.TriangleBuilder().CreateTriangle(3, 4, 5);
         VS_21_February.Triangles triangle_4 = new VS_21_February.TriangleBuilder().CreateTriangle(9, 13, 14);

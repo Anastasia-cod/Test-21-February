@@ -2,7 +2,7 @@
 namespace VS_21_February
 {
 	public class EquilateralTriangle : Triangles
-    {
+	{
         public EquilateralTriangle(double firstSide, double secondSide, double thirdSide) : base(firstSide, secondSide, thirdSide)
         {
 
