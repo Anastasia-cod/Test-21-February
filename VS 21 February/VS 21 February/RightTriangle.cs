@@ -9,7 +9,7 @@ namespace VS_21_February
 
         public override double GetSquare()
         {
-            Console.WriteLine("Get square Right Triangle");
+            Console.WriteLine("\nGet square Right Triangle");
 
             if(firstSide > secondSide)
             {

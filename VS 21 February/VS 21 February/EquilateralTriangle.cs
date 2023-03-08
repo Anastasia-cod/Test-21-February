@@ -10,7 +10,7 @@ namespace VS_21_February
 
         public override double GetSquare()
         {
-            Console.WriteLine("Get square Equilateral Triangle");
+            Console.WriteLine("\nGet square Equilateral Triangle");
             return Math.Sqrt(3) / 4 * Math.Pow(firstSide, 2);
         }
     }

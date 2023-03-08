@@ -16,7 +16,7 @@ namespace VS_21_February
 
 		public virtual double GetSquare()
 		{
-            Console.WriteLine("Get square scalene Triangle");
+            Console.WriteLine("\nGet square scalene Triangle");
             double semiPerimeter = (firstSide + secondSide + thirdSide) / 2;
             return Math.Sqrt(semiPerimeter * (semiPerimeter - firstSide) * (semiPerimeter - secondSide) * (semiPerimeter - thirdSide));
         }
