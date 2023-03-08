@@ -5,7 +5,6 @@ namespace VS_21_February
 	{
         public RightTriangle(double firstSide, double secondSide, double thirdSide) : base(firstSide, secondSide, thirdSide)
         {
-
         }
 
         public override double GetSquare()

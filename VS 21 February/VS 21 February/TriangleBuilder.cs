@@ -5,7 +5,6 @@ namespace VS_21_February
 	{
         public TriangleBuilder()
         {
-
         }
 
         public Triangles CreateTriangle(double firstSide, double secondSide, double thirdSide)

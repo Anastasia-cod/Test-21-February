@@ -1,7 +1,7 @@
 ﻿using System;
 namespace VS_21_February
 {
-	public class Triangles
+	public class Triangles : Figure
 	{
         public double firstSide;
         public double secondSide;

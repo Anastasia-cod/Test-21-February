@@ -14,6 +14,16 @@ class Hello
         Console.Write(triangle_3.GetSquare());
         Console.Write(triangle_4.GetSquare());
 
+        VS_21_February.Rectangle rectangle_1 = new VS_21_February.RectangleBuilder().CreateRectangle(9, 10);
+        VS_21_February.Rectangle rectangle_2 = new VS_21_February.RectangleBuilder().CreateRectangle(15, 15);
+
+        Console.Write(rectangle_1.GetSquare());
+        Console.Write(rectangle_2.GetSquare());
+
+
+
+
+
 
         ////Home task lesson 5
         ////First Home Task
