@@ -3,9 +3,10 @@ namespace VS_21_February
 {
 	public class RightTriangle : Triangles
 	{
-		public RightTriangle(double firstSide, double secondSide, double thirdSide) :base(firstSide, secondSide, thirdSide)
-		{
-		}
+        public RightTriangle(double firstSide, double secondSide, double thirdSide) : base(firstSide, secondSide, thirdSide)
+        {
+
+        }
 
         public override double GetSquare()
         {

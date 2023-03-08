@@ -3,9 +3,10 @@ namespace VS_21_February
 {
 	public class IsoscelesTriangle : Triangles
 	{
-		public IsoscelesTriangle(double firstSide, double secondSide, double thirdSide) : base(firstSide, secondSide, thirdSide)
-		{
-		}
+        public IsoscelesTriangle(double firstSide, double secondSide, double thirdSide) : base(firstSide, secondSide, thirdSide)
+        {
+
+        }
 
         public override double GetSquare()
         {

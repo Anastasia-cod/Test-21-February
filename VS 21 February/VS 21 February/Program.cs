@@ -15,10 +15,6 @@ class Hello
         Console.Write(triangle_3.GetSquare());
         Console.Write(triangle_4.GetSquare());
 
-
-
-
-
         ////Home task lesson 5
         ////First Home Task
         //VS_21_February.Phone iphone_13 = new VS_21_February.Phone();
