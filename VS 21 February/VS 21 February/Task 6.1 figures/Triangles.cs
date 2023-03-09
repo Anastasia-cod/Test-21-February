@@ -20,6 +20,11 @@ namespace VS_21_February
             double semiPerimeter = (firstSide + secondSide + thirdSide) / 2;
             return Math.Sqrt(semiPerimeter * (semiPerimeter - firstSide) * (semiPerimeter - secondSide) * (semiPerimeter - thirdSide));
         }
+
+        public override string GetInfo(string figureName)
+        {
+            return "\nThis figure is Triangle";
+        }
     }
 }
 

@@ -3,12 +3,14 @@ namespace VS_21_February
 {
 	public class Figure
 	{
-		//public string figureName { get; set; }
+		public Figure()
+		{
+		}
 
-		//public Figure(string figureName)
-		//{
-		//	this.figureName = figureName;
-		//}
+		public virtual string GetInfo(string figureName)
+		{
+			return $"This is the {figureName}";
+		}
 	}
 }
 

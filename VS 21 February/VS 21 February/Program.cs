@@ -4,38 +4,51 @@ class Hello
     static void Main(string[] args)
     {
         ////HomeTask 1 lesson 6
-        //VS_21_February.Triangles triangle_1 = new VS_21_February.TriangleBuilder().CreateTriangle(5, 5, 8);
-        //VS_21_February.Triangles triangle_2 = new VS_21_February.TriangleBuilder().CreateTriangle(6, 6, 6);
-        //VS_21_February.Triangles triangle_3 = new VS_21_February.TriangleBuilder().CreateTriangle(3, 4, 5);
-        //VS_21_February.Triangles triangle_4 = new VS_21_February.TriangleBuilder().CreateTriangle(9, 13, 14);
+        VS_21_February.Triangles triangle_1 = new VS_21_February.TriangleBuilder().CreateTriangle(5, 5, 8);
+        VS_21_February.Triangles triangle_2 = new VS_21_February.TriangleBuilder().CreateTriangle(6, 6, 6);
+        VS_21_February.Triangles triangle_3 = new VS_21_February.TriangleBuilder().CreateTriangle(3, 4, 5);
+        VS_21_February.Triangles triangle_4 = new VS_21_February.TriangleBuilder().CreateTriangle(9, 13, 14);
 
-        //Console.Write(triangle_1.GetSquare());
-        //Console.Write(triangle_2.GetSquare());
-        //Console.Write(triangle_3.GetSquare());
-        //Console.Write(triangle_4.GetSquare());
+        Console.Write(triangle_1.GetSquare());
+        Console.Write(triangle_2.GetSquare());
+        Console.Write(triangle_3.GetSquare());
+        Console.Write(triangle_4.GetSquare());
 
-        //VS_21_February.Rectangle rectangle_1 = new VS_21_February.RectangleBuilder().CreateRectangle(9, 10);
-        //VS_21_February.Rectangle rectangle_2 = new VS_21_February.RectangleBuilder().CreateRectangle(15, 15);
+        VS_21_February.Rectangle rectangle_1 = new VS_21_February.RectangleBuilder().CreateRectangle(9, 10);
+        VS_21_February.Rectangle rectangle_2 = new VS_21_February.RectangleBuilder().CreateRectangle(15, 15);
 
-        //Console.Write(rectangle_1.GetSquare());
-        //Console.Write(rectangle_2.GetSquare());
+        Console.Write(rectangle_1.GetSquare());
+        Console.Write(rectangle_2.GetSquare());
+
+        Console.Write(triangle_1.GetInfo("test_1"));
+        Console.Write(rectangle_1.GetInfo("test_2"));
+
+        VS_21_February.Figure[] figures = new VS_21_February.Figure[6];
+        figures[0] = triangle_1;
+        figures[1] = triangle_2;
+        figures[2] = triangle_3;
+        figures[3] = rectangle_2;
+        figures[4] = triangle_4;
+        figures[5] = rectangle_1;
+
+        Console.WriteLine(figures[0]);
 
         //HomeTask 2 lesson 6
-        VS_21_February.Doctor doctor_1 = new VS_21_February.Doctor("Alexander Derytev", 10, 1);
-        VS_21_February.Doctor doctor_2 = new VS_21_February.Doctor("Alesya Nogertty", 4, 2);
-        VS_21_February.Doctor doctor_3 = new VS_21_February.Doctor("Kirill Vasendor", 8, 1);
+        //VS_21_February.Doctor doctor_1 = new VS_21_February.Doctor("Alexander Derytev", 10, 1);
+        //VS_21_February.Doctor doctor_2 = new VS_21_February.Doctor("Alesya Nogertty", 4, 2);
+        //VS_21_February.Doctor doctor_3 = new VS_21_February.Doctor("Kirill Vasendor", 8, 1);
 
-        VS_21_February.Patient patient_1 = new VS_21_February.Patient("Viacheslav Parsen", 25);
-        VS_21_February.Patient patient_2 = new VS_21_February.Patient("Kelly Brandy", 54);
-        VS_21_February.Patient patient_3 = new VS_21_February.Patient("Andrey Villy", 18);
+        //VS_21_February.Patient patient_1 = new VS_21_February.Patient("Viacheslav Parsen", 25);
+        //VS_21_February.Patient patient_2 = new VS_21_February.Patient("Kelly Brandy", 54);
+        //VS_21_February.Patient patient_3 = new VS_21_February.Patient("Andrey Villy", 18);
 
-        VS_21_February.TreatmentPlan treatmentPlan_1 = new VS_21_February.TreatmentPlan(patient_1, 1, doctor_1);
-        VS_21_February.TreatmentPlan treatmentPlan_2 = new VS_21_February.TreatmentPlan(patient_2, 1, doctor_2);
-        VS_21_February.TreatmentPlan treatmentPlan_3 = new VS_21_February.TreatmentPlan(patient_3, 1, doctor_3);
+        //VS_21_February.TreatmentPlan treatmentPlan_1 = new VS_21_February.TreatmentPlan(patient_1, 1, doctor_1);
+        //VS_21_February.TreatmentPlan treatmentPlan_2 = new VS_21_February.TreatmentPlan(patient_2, 1, doctor_2);
+        //VS_21_February.TreatmentPlan treatmentPlan_3 = new VS_21_February.TreatmentPlan(patient_3, 1, doctor_3);
 
-        Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_1, 1, doctor_1).Treat());
-        Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_2, 2, doctor_2).Treat());
-        Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_3, 3, doctor_3).Treat());
+        //Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_1, 1, doctor_1).Treat());
+        //Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_2, 2, doctor_2).Treat());
+        //Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_3, 3, doctor_3).Treat());
 
         ////Home task lesson 5
         ////First Home Task

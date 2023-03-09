@@ -6,7 +6,7 @@ namespace VS_21_February
         public double length;
         public double width;
 
-        public Rectangle(double length, double width)
+        public Rectangle(double length, double width) 
         {
             this.length = length;
             this.width = width;
@@ -16,6 +16,11 @@ namespace VS_21_February
         {
             Console.WriteLine("\nGet square Rectangle");
             return length * width;
+        }
+
+        public override string GetInfo(string figureName)
+        {
+            return "\nThis figure is Rectangle";
         }
     }
 }
