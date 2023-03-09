@@ -3,27 +3,31 @@ class Hello
 {
     static void Main(string[] args)
     {
-        //HomeTask 1 lesson 6
-        VS_21_February.Triangles triangle_1 = new VS_21_February.TriangleBuilder().CreateTriangle(5, 5, 8);
-        VS_21_February.Triangles triangle_2 = new VS_21_February.TriangleBuilder().CreateTriangle(6, 6, 6);
-        VS_21_February.Triangles triangle_3 = new VS_21_February.TriangleBuilder().CreateTriangle(3, 4, 5);
-        VS_21_February.Triangles triangle_4 = new VS_21_February.TriangleBuilder().CreateTriangle(9, 13, 14);
+        ////HomeTask 1 lesson 6
+        //VS_21_February.Triangles triangle_1 = new VS_21_February.TriangleBuilder().CreateTriangle(5, 5, 8);
+        //VS_21_February.Triangles triangle_2 = new VS_21_February.TriangleBuilder().CreateTriangle(6, 6, 6);
+        //VS_21_February.Triangles triangle_3 = new VS_21_February.TriangleBuilder().CreateTriangle(3, 4, 5);
+        //VS_21_February.Triangles triangle_4 = new VS_21_February.TriangleBuilder().CreateTriangle(9, 13, 14);
 
-        Console.Write(triangle_1.GetSquare());
-        Console.Write(triangle_2.GetSquare());
-        Console.Write(triangle_3.GetSquare());
-        Console.Write(triangle_4.GetSquare());
+        //Console.Write(triangle_1.GetSquare());
+        //Console.Write(triangle_2.GetSquare());
+        //Console.Write(triangle_3.GetSquare());
+        //Console.Write(triangle_4.GetSquare());
 
-        VS_21_February.Rectangle rectangle_1 = new VS_21_February.RectangleBuilder().CreateRectangle(9, 10);
-        VS_21_February.Rectangle rectangle_2 = new VS_21_February.RectangleBuilder().CreateRectangle(15, 15);
+        //VS_21_February.Rectangle rectangle_1 = new VS_21_February.RectangleBuilder().CreateRectangle(9, 10);
+        //VS_21_February.Rectangle rectangle_2 = new VS_21_February.RectangleBuilder().CreateRectangle(15, 15);
 
-        Console.Write(rectangle_1.GetSquare());
-        Console.Write(rectangle_2.GetSquare());
+        //Console.Write(rectangle_1.GetSquare());
+        //Console.Write(rectangle_2.GetSquare());
 
+        //HomeTask 2 lesson 6
+        VS_21_February.Surgeon surgeon_1 = new VS_21_February.Surgeon("Alexander Derytev", 10, 1);
+        VS_21_February.Therapist therapist_1 = new VS_21_February.Therapist("Alesya Nogertty", 4, 2);
+        VS_21_February.Dentist dentist_1 = new VS_21_February.Dentist("Kirill Vasendor", 8, 1);
 
-
-
-
+        Console.Write(surgeon_1.Treat());
+        Console.Write(therapist_1.Treat());
+        Console.Write(dentist_1.Treat());
 
         ////Home task lesson 5
         ////First Home Task
