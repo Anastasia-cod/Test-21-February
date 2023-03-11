@@ -12,15 +12,10 @@ namespace VS_21_February
             this.width = width;
         }
 
-        public virtual double GetSquare()
+        public override double GetSquare()
         {
             Console.WriteLine("\nGet square Rectangle");
             return length * width;
-        }
-
-        public override string GetInfo(string figureName)
-        {
-            return "\nThis figure is Rectangle";
         }
     }
 }

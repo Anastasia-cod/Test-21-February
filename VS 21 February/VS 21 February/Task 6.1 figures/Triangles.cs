@@ -14,16 +14,11 @@ namespace VS_21_February
             this.thirdSide = thirdSide;
         }
 
-        public virtual double GetSquare()
+        public override double GetSquare()
         {
             Console.WriteLine("\nGet square Scalene Triangle");
             double semiPerimeter = (firstSide + secondSide + thirdSide) / 2;
             return Math.Sqrt(semiPerimeter * (semiPerimeter - firstSide) * (semiPerimeter - secondSide) * (semiPerimeter - thirdSide));
-        }
-
-        public override string GetInfo(string figureName)
-        {
-            return "\nThis figure is Triangle";
         }
     }
 }

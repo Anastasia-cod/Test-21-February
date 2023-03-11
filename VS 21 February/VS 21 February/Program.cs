@@ -20,24 +20,15 @@ class Hello
         Console.Write(rectangle_1.GetSquare());
         Console.Write(rectangle_2.GetSquare());
 
-        Console.Write(triangle_1.GetInfo("test_1"));
-        Console.Write(rectangle_1.GetInfo("test_2"));
+        var arrayFigures = new VS_21_February.Figure[] { triangle_1, triangle_2, triangle_3, triangle_4, rectangle_1, rectangle_2 };
 
-        //I tried to make arrays
-        //VS_21_February.Figure[] arrayFigures = { triangle_1, triangle_2, triangle_3, triangle_4, rectangle_1, rectangle_2 };
-
-        //int rows = arrayFigures.GetUpperBound(0) + 1;
-        //int columns = arrayFigures.Length;
-
-        //for (int i =0; i < rows; i++)
-        //{
-        //    for (int j = 0; j < columns; j++)
-        //    {
-        //        Console.Write(value: $"{arrayFigures[i, j]} \t");
-        //    }
-
-        //    Console.WriteLine();
-        //}
+        foreach (var figure in arrayFigures)
+        {
+            if (figure != null)
+            {
+                Console.Write(figure.GetSquare().ToString("#.###"));
+            }
+        }
 
         //HomeTask 2 lesson 6
         VS_21_February.Doctor doctor_1 = new VS_21_February.Doctor("Alexander Derytev", 10, 1);
