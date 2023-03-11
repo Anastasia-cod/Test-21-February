@@ -1,7 +1,7 @@
 ﻿using System;
 namespace VS_21_February
 {
-	public class Figure
+	public abstract class Figure
 	{
 		public Figure()
 		{
@@ -11,6 +11,6 @@ namespace VS_21_February
 		{
 			return $"This is the {figureName}";
 		}
-	}
+    }
 }
 
