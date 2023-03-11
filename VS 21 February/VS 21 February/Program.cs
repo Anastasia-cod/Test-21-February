@@ -17,6 +17,16 @@ class Hello
         Console.WriteLine(trolleybus_1.ReturnType());
         Console.WriteLine(tramcar_1.ReturnType());
 
+        var arrayTransport = new Transport[] { bus_1, trolleybus_1, tramcar_1 };
+
+        foreach (var transport in arrayTransport)
+        {
+            if(transport != null)
+            {
+                Console.Write(transport.numberOfSeats.ToString() + " ");
+            }
+        }
+
         ////HomeTask 1 lesson 6
         //VS_21_February.Triangles triangle_1 = new VS_21_February.TriangleBuilder().CreateTriangle(5, 5, 8);
         //VS_21_February.Triangles triangle_2 = new VS_21_February.TriangleBuilder().CreateTriangle(6, 6, 6);
