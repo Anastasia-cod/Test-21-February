@@ -8,7 +8,6 @@ namespace VS_21_February
 		}
 
 		public abstract double GetSquare();
-
     }
 }
 
