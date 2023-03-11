@@ -16,7 +16,7 @@ namespace VS_21_February.Task7.autopark
 
         public void Main()
         {
-            Console.WriteLine($"Bus number {transport.number} goes to {transport.destination}. Departure time: {transport.departureTime}. Number of seats: {transport.numberOfSeats}.");
+            Console.WriteLine($"Bus number {transport.Number} goes to {transport.Destination}. Departure time: {transport.DepartureTime}. Number of seats: {transport.NumberOfSeats}.");
         }
     }
 }

@@ -2,23 +2,34 @@
 namespace VS_21_February.Task7.autopark
 {
 	public abstract class Transport
-	{
-        public string type { get; set; }
-        public string destination { get; set; }
-        public string number { get; set; }
-        public string departureTime { get; set; }
-        public int numberOfSeats { get; set; }
+    {
+        public string Type { get; set; }
+        public string Destination { get; set; }
+        public string Number { get; set; }
+        public string DepartureTime { get; set; }
+        public int NumberOfSeats { get; set; }
 
-        public Transport(string destination, string number, string departureTime, int numberOfSeats, string type)
+        public Transport(string Destination, string Number, string DepartureTime, int NumberOfSeats, string Type)
         {
-            this.destination = destination;
-            this.number = number;
-            this.departureTime = departureTime;
-            this.numberOfSeats = numberOfSeats;
-            this.type = type;
+            this.Destination = Destination;
+            this.Number = Number;
+            this.DepartureTime = DepartureTime;
+            this.NumberOfSeats = NumberOfSeats;
+            this.Type = Type;
         }
 
         public abstract string ReturnType();
+
+        //public int CompareTo(object obj)
+        //{
+        //    if (obj is Transport)
+        //    {
+        //        Transport c2 = (Transport)obj;
+        //        return CompareTo(c2.NumberOfSeats);
+        //    }               
+        //    else
+        //        throw new ArgumentException("Object is not of type Transport");
+        //}
     }
 }
 

@@ -21,11 +21,13 @@ class Hello
 
         foreach (var transport in arrayTransport)
         {
-            if(transport != null)
+            if (transport != null)
             {
-                Console.Write(transport.numberOfSeats.ToString() + " ");
+                Console.WriteLine(" " + transport.NumberOfSeats.ToString() + " "+ transport.Type + " " + transport.Number);
             }
         }
+
+
 
         ////HomeTask 1 lesson 6
         //VS_21_February.Triangles triangle_1 = new VS_21_February.TriangleBuilder().CreateTriangle(5, 5, 8);

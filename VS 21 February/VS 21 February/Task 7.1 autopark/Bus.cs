@@ -15,7 +15,7 @@ namespace VS_21_February.Task7.autopark
 
         public override string ReturnType()
         {
-            return $"Bus is a {type} type";
+            return $"Bus is a {Type} type";
         }
     }
 }
