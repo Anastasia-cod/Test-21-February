@@ -8,4 +8,19 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Hometask 3-5\" />
+    <None Remove="Task 6.1 figures\" />
+    <None Remove="Task 6.2 doctor\" />
+    <None Remove="Task 7.1 autopark\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Hometask 3-5\" />
+    <Folder Include="Task 6.1 figures\" />
+    <Folder Include="Task 6.2 doctor\" />
+    <Folder Include="Task 7.1 autopark\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig" />
+  </ItemGroup>
 </Project>
