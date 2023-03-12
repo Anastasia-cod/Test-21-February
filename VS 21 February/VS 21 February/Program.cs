@@ -51,6 +51,21 @@ class Hello
             }
         }
 
+        //Ask the user for a departure time.
+        //Print to the console a list of vehicles leaving after the specified time.
+        Console.WriteLine("Please enter the departure time");
+
+        string? timeFromUser_2 = Console.ReadLine();
+        DateTime dateTime = DateTime.Parse(timeFromUser_2);
+
+        foreach (var transport in arrayPublicTransport)
+        {
+            if (DateTime.Parse(transport.DepartureTime) > dateTime)
+            {
+                Console.WriteLine(string.Format("{0}, {1}, {2}", transport.DepartureTime, transport.Number, transport.Destination));
+            }
+        }
+
         //Sealed method NumberOfTrips
         PublicTransport transport_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
         transport_1.NumberOfTrips();
