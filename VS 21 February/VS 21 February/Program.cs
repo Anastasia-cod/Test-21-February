@@ -33,6 +33,24 @@ class Hello
 
         Array.ForEach(sorted, Console.WriteLine);
 
+        //Ask the user for a departure time and/or destination.
+        //Find an object in the array that matches the given parameters and output its data to the console.
+        Console.WriteLine("Please enter the departure time");
+
+        string? timeFromUser = Console.ReadLine();
+
+        Console.WriteLine("Please enter the Destination");
+
+        string? destinationFromUser = Console.ReadLine();
+
+        foreach (var transport in arrayPublicTransport)
+        {
+            if(transport.DepartureTime == timeFromUser || transport.Destination == destinationFromUser)
+            {
+                Console.WriteLine(string.Format("{0}, {1}, {2}", transport.Number, transport.Destination, transport.DepartureTime));
+            }
+        }
+
         //Sealed method NumberOfTrips
         PublicTransport transport_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
         transport_1.NumberOfTrips();
