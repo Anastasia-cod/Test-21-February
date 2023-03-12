@@ -1,13 +1,13 @@
 ﻿using System;
 namespace VS_21_February.Task7.autopark
 {
-	public class Trolleybus : Transport
+	public class Trolleybus : PublicTransport
 	{
-        public Trolleybus(string Destination, string Number, string DepartureTime, int NumberOfSeats, string Type) : base(Destination, Number, DepartureTime, NumberOfSeats, "Electric")
+        public Trolleybus(string destination, string number, string departureTime, int numberOfSeats, string type) : base(destination, number, departureTime, numberOfSeats, "Electric")
         {
         }
 
-        public Trolleybus(string Destination, string Number, string DepartureTime, int NumberOfSeats) : this(Destination, Number, DepartureTime, NumberOfSeats, "Electric")
+        public Trolleybus(string destination, string number, string departureTime, int numberOfSeats) : this(destination, number, departureTime, numberOfSeats, "Electric")
         {
         }
 

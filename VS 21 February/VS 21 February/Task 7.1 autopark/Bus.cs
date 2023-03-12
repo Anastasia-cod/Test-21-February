@@ -3,7 +3,7 @@ using System.Data;
 
 namespace VS_21_February.Task7.autopark
 {
-	public class Bus : Transport
+	public class Bus : PublicTransport
 	{
         public Bus(string destination, string number, string departureTime, int numberOfSeats, string type) : base(destination, number, departureTime, numberOfSeats, "Fuel")
         {

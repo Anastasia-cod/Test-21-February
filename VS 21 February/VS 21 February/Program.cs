@@ -1,33 +1,49 @@
 ﻿using System;
+using Microsoft.VisualBasic;
+using System.ComponentModel;
 using VS_21_February.Task7.autopark;
 class Hello
 {
     static void Main(string[] args)
     {
         //HomeTask 1 lesson 7
+        //Public autopark
         Bus bus_1 = new Bus("Minsk - Gomel", "2290-NB-3", "14:30", 30);
         Trolleybus trolleybus_1 = new Trolleybus("DS Kyntsevshina - DS Malinovka", "9917-VS-5", "12:25", 83);
         Tramcar tramcar_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
+        Bus bus_2 = new Bus("Minsk - Berlin", "7777-NN-7", "06:20", 28);
+        Trolleybus trolleybus_2 = new Trolleybus("DS Kyntsevshina - DS Malinovka", "7717-VS-6", "14:15", 70);
 
-        MainMethod test_1 = new MainMethod(bus_1);
+        //Interface IGetInfo
+        bus_1.Main();
+        trolleybus_1.Main();
+        tramcar_1.Main();
 
-        test_1.Main();
-
+        //Define in the superclass (class PublicTransport) a method that returns the type of transport (Electric, Rail, etc.).
+        //Override this method in derived classes.
         Console.WriteLine(bus_1.ReturnType());
         Console.WriteLine(trolleybus_1.ReturnType());
         Console.WriteLine(tramcar_1.ReturnType());
 
-        var arrayTransport = new Transport[] { bus_1, trolleybus_1, tramcar_1 };
+        //Sort the transport by the number of seats and output the data of the objects to the console.
+        //I use: https://www.techiedelight.com/ru/sort-an-array-of-objects-by-a-specific-field-in-csharp/
+        var arrayPublicTransport = new PublicTransport[] { bus_1, bus_2, trolleybus_1, tramcar_1, trolleybus_2 };
 
-        foreach (var transport in arrayTransport)
-        {
-            if (transport != null)
-            {
-                Console.WriteLine(" " + transport.NumberOfSeats.ToString() + " "+ transport.Type + " " + transport.Number);
-            }
-        }
+        var sorted = arrayPublicTransport.OrderBy(ob => ob.NumberOfSeats).ToArray();
 
+        Array.ForEach(sorted, Console.WriteLine);
 
+        //Sealed method NumberOfTrips
+        PublicTransport transport_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
+        transport_1.NumberOfTrips();
+        bus_1.NumberOfTrips();
+
+        //Create a TransportService class.
+        //Define a printTransportType method inside the TransportService class that will accept an object of type Transport as a parameter.
+        //Inside the printTransportType method, you need to call another method that returns the transport type and print this information to the console.
+        Console.WriteLine(new TransportService().PrintTransportType(tramcar_1));
+        Console.WriteLine(new TransportService().PrintTransportType(trolleybus_1));
+        Console.WriteLine(new TransportService().PrintTransportType(bus_1));
 
         ////HomeTask 1 lesson 6
         //VS_21_February.Triangles triangle_1 = new VS_21_February.TriangleBuilder().CreateTriangle(5, 5, 8);
