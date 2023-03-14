@@ -29,7 +29,7 @@ namespace VS_21_February.Task7.autopark
             base.NumberOfTrips();
         }
 
-        public void Main()
+        public void GetInfo()
         {
             Console.WriteLine($"Transport number {Number} goes to {Destination}. Departure time: {DepartureTime}. Number of seats: {NumberOfSeats}");
         }

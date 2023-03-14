@@ -15,9 +15,9 @@ class Hello
         Trolleybus trolleybus_2 = new Trolleybus("DS Kyntsevshina - DS Malinovka", "7717-VS-6", "14:15", 70);
 
         //Interface IGetInfo
-        bus_1.Main();
-        trolleybus_1.Main();
-        tramcar_1.Main();
+        bus_1.GetInfo();
+        trolleybus_1.GetInfo();
+        tramcar_1.GetInfo();
 
         //Define in the superclass (class PublicTransport) a method that returns the type of transport (Electric, Rail, etc.).
         //Override this method in derived classes.
