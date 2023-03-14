@@ -1,8 +1,8 @@
 ﻿using System;
 namespace VS_21_February
 {
-	public class Dentist : Doctor
-	{
+    public class Dentist : Doctor
+    {
         protected string position = "Dentist";
 
         public Dentist(string name, double experience, int qualificationCategory) : base(name, experience, qualificationCategory)
