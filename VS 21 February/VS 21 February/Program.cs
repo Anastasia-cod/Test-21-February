@@ -1,9 +1,84 @@
-﻿using System;
+using System;
 using VS_21_February;
+using Microsoft.VisualBasic;
+using System.ComponentModel;
+using VS_21_February.Task7.autopark;
 class Hello
 {
     static void Main(string[] args)
     {
+        //HomeTask 1 lesson 7
+        //Public autopark
+        Bus bus_1 = new Bus("Minsk - Gomel", "2290-NB-3", "14:30", 30);
+        Trolleybus trolleybus_1 = new Trolleybus("DS Kyntsevshina - DS Malinovka", "9917-VS-5", "12:25", 83);
+        Tramcar tramcar_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
+        Bus bus_2 = new Bus("Minsk - Berlin", "7777-NN-7", "06:20", 28);
+        Trolleybus trolleybus_2 = new Trolleybus("DS Kyntsevshina - DS Malinovka", "7717-VS-6", "14:15", 70);
+
+        //Interface IGetInfo
+        bus_1.GetInfo();
+        trolleybus_1.GetInfo();
+        tramcar_1.GetInfo();
+
+        //Define in the superclass (class PublicTransport) a method that returns the type of transport (Electric, Rail, etc.).
+        //Override this method in derived classes.
+        Console.WriteLine(bus_1.ReturnType());
+        Console.WriteLine(trolleybus_1.ReturnType());
+        Console.WriteLine(tramcar_1.ReturnType());
+
+        //Sort the transport by the number of seats and output the data of the objects to the console.
+        //I use: https://www.techiedelight.com/ru/sort-an-array-of-objects-by-a-specific-field-in-csharp/
+        var arrayPublicTransport = new PublicTransport[] { bus_1, bus_2, trolleybus_1, tramcar_1, trolleybus_2 };
+
+        var sorted = arrayPublicTransport.OrderBy(ob => ob.NumberOfSeats).ToArray();
+
+        Array.ForEach(sorted, Console.WriteLine);
+
+        //Ask the user for a departure time and/or destination.
+        //Find an object in the array that matches the given parameters and output its data to the console.
+        Console.WriteLine("Please enter the departure time");
+
+        string? timeFromUser = Console.ReadLine();
+
+        Console.WriteLine("Please enter the Destination");
+
+        string? destinationFromUser = Console.ReadLine();
+
+        foreach (var transport in arrayPublicTransport)
+        {
+            if(transport.DepartureTime == timeFromUser || transport.Destination == destinationFromUser)
+            {
+                Console.WriteLine(string.Format("{0}, {1}, {2}", transport.Number, transport.Destination, transport.DepartureTime));
+            }
+        }
+
+        //Ask the user for a departure time.
+        //Print to the console a list of vehicles leaving after the specified time.
+        Console.WriteLine("Please enter the departure time");
+
+        string? timeFromUser_2 = Console.ReadLine();
+        DateTime dateTime = DateTime.Parse(timeFromUser_2);
+
+        foreach (var transport in arrayPublicTransport)
+        {
+            if (DateTime.Parse(transport.DepartureTime) > dateTime)
+            {
+                Console.WriteLine(string.Format("{0}, {1}, {2}", transport.DepartureTime, transport.Number, transport.Destination));
+            }
+        }
+
+        //Sealed method NumberOfTrips
+        PublicTransport transport_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
+        transport_1.NumberOfTrips();
+        bus_1.NumberOfTrips();
+
+        //Create a TransportService class.
+        //Define a printTransportType method inside the TransportService class that will accept an object of type Transport as a parameter.
+        //Inside the printTransportType method, you need to call another method that returns the transport type and print this information to the console.
+        Console.WriteLine(new TransportService().PrintTransportType(tramcar_1));
+        Console.WriteLine(new TransportService().PrintTransportType(trolleybus_1));
+        Console.WriteLine(new TransportService().PrintTransportType(bus_1));
+
         ////HomeTask 1 lesson 6
         Triangles triangle_1 = new TriangleBuilder().CreateTriangle(5, 5, 8);
         Triangles triangle_2 = new TriangleBuilder().CreateTriangle(6, 6, 6);
