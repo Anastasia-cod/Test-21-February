@@ -3,6 +3,10 @@ namespace VS_21_February.Task8.exception
 {
 	public class WrongPasswordException : Exception
 	{
+		public WrongPasswordException()
+		{
+		}
+
 		public WrongPasswordException(string message) : base(message)
 		{
 		}
