@@ -4,7 +4,7 @@ namespace VS_21_February.Task8.exception
 	public class AuthorizationForm
 	{
 		/// <summary>
-		/// Check exception in Authorization Form if login, password or confirm password is incorrect
+		/// Return exception if login, password or confirm password is incorrect in Authorization Form
 		/// </summary>
 		/// <param name="login - should be more 3 and less 20 characters and no spaces"></param>
 		/// <param name="password - should be more 3 and less 20 characters, no spaces and at least one number"></param>
@@ -21,11 +21,11 @@ namespace VS_21_February.Task8.exception
 
 				if (login.Length < 3 || login.Length >= 20 || indexSpace_login > 0)
 				{
-					throw new WrongLoginException("Incorrect Login!\nLogin must be more than 3 characters and less than 20 characters and must not contain spaces.");
+					throw new WrongLoginException("Incorrect Login! Login must be: \n1)more than 3 characters and less than 20 characters, 2)must not contain spaces.");
 				}
-				else if (password.Length < 4 || password.Length >= 20 || indexSpace_password > 0)
+				else if (password.Length < 4 || password.Length >= 20 || indexSpace_password > 0 || !password.Any(char.IsDigit))
 				{
-					throw new WrongPasswordException("Incorrect Password!\nPassword must be more than 4 characters and less than 20 characters, must not contain spaces and contain at least one number.");
+					throw new WrongPasswordException("Incorrect Password! Password must be \n1)more than 4 characters and less than 20 characters,\n2) must not contain spaces, \n3)must contain at least one number.");
 				}
 				else if (hashCode_password != hashCode_confirmPassword)
 				{

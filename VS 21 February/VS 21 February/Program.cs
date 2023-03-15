@@ -8,8 +8,15 @@ class Hello
 {
 	static void Main(string[] args)
 	{
-		var login_1 = AuthorizationForm.CheckException("Anastasiya", "news", "new ");
-		Console.WriteLine(login_1);
+		var form_Correct = AuthorizationForm.CheckException("Anastasiya", "test1", "test1");
+		var loginIncorrect = AuthorizationForm.CheckException("Kate ", "newss1", "newss1");
+		var passwordIncorrect = AuthorizationForm.CheckException("Violeta", "testpassword", "testpassword");
+		var confirmationPassworddIncorrect = AuthorizationForm.CheckException("Maksim", "check0425ddd!newd", "check0425dd!newdd");
+
+		Console.WriteLine(form_Correct);
+		Console.WriteLine(loginIncorrect);
+		Console.WriteLine(passwordIncorrect);
+		Console.WriteLine(confirmationPassworddIncorrect);
 
 		//HomeTask 1 lesson 7
 		//Public autopark
