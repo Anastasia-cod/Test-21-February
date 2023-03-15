@@ -8,7 +8,7 @@ class Hello
 {
 	static void Main(string[] args)
 	{
-		var login_1 = AuthorizationForm.CheckException("new ", "new ", "new");
+		var login_1 = AuthorizationForm.CheckException("Anastasiya", "news", "new ");
 		Console.WriteLine(login_1);
 
 		//HomeTask 1 lesson 7
