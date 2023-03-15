@@ -3,25 +3,20 @@ namespace VS_21_February
 {
 	public class Rectangle : Figure
 	{
-        public double length;
-        public double width;
+		public double length;
+		public double width;
 
-        public Rectangle(double length, double width) 
-        {
-            this.length = length;
-            this.width = width;
-        }
+		public Rectangle(double length, double width) 
+		{
+			this.length = length;
+			this.width = width;
+		}
 
-        public virtual double GetSquare()
-        {
-            Console.WriteLine("\nGet square Rectangle");
-            return length * width;
-        }
-
-        public override string GetInfo(string figureName)
-        {
-            return "\nThis figure is Rectangle";
-        }
-    }
+		public override double GetSquare()
+		{
+			Console.WriteLine("\nGet square Rectangle");
+			return length * width;
+		}
+	}
 }
 

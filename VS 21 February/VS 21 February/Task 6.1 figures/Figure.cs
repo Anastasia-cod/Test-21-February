@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace VS_21_February
 {
 	public abstract class Figure
@@ -7,10 +7,7 @@ namespace VS_21_February
 		{
 		}
 
-		public virtual string GetInfo(string figureName)
-		{
-			return $"This is the {figureName}";
-		}
-    }
+		public abstract double GetSquare();
+	}
 }
 
