@@ -47,7 +47,7 @@ class Hello
 		//	Console.WriteLine($"Key: {dog.Key}, value: {dog.Value}");
 		//}
 
-		//HomeTask 1 and 1.1
+		//HomeTask 1 lesson 9
 		List<Product> products = new List<Product>
 		{
 			new ProductsInShop("Cake Napoleon", 45.5, DateTime.Parse("03.10.2023 14:40"), 9),
@@ -63,25 +63,58 @@ class Hello
 			new Batch("Cream", 12, 20, DateTime.Parse("02.18.2023"), 14),
 		};
 
-		DateTime now = DateTime.Now;
+		//DateTime now = DateTime.Now;
 
 		//Display full information from the database on the screen
-		foreach (Product product in products)
+		//foreach (var product in products)
+		//{
+		//	Console.WriteLine($"\n{product.GetInfo()}.\nCheck expiration date: {product.CheckExpirationDate(now)}");
+		//}
+
+		////Search for expired goods (at the time of the current date)
+
+		//Console.WriteLine("\nThe expiration date products:");
+
+		//foreach (var product in products)
+		//{
+		//	if (product.CheckExpirationDate(now).Contains("Expired!"))
+		//	{
+		//		Console.WriteLine("\n" + product.GetInfo() + product.CheckExpirationDate(now));
+		//	}
+		//}
+
+		//HomeTask 1.1 lesson 9
+		List<Product> products_1 = new List<Product>
 		{
-			Console.WriteLine($"\n{product.GetInfo()}.\nCheck expiration date: {product.CheckExpirationDate(now)}");
+			new ProductsInShop("Almond croissant", 10, DateTime.Parse("03.18.2023 08:40"), 2),
+			new ProductsInShop("Smoked salmon", 21, DateTime.Parse("03.16.2023"), 30),
+			new ProductsInShop("Black bread", 5.5, DateTime.Parse("03.18.2023"), 5),
+			new ProductsInShop("Red caviar", 45, DateTime.Parse("03.01.2023"), 90),
+			new ProductsInShop("Сottage cheese", 7, DateTime.Parse("03.07.2023"), 60),
+		};
+
+		foreach (var product in products_1)
+		{
+			Console.WriteLine(product.GetInfo());
 		}
 
-		//Search for expired goods (at the time of the current date)
+		//Change the price of one product by 100.
+		products_1[3] = new ProductsInShop("Red caviar", 100, DateTime.Parse("03.01.2023"), 90);
 
-		Console.WriteLine("\nThe expiration date products:");
+		//Delete the last product.
+		products_1.RemoveAt(products_1.Count - 1);
 
-		foreach (Product product in products)
+		Console.WriteLine("\nAfter deletion the last product:");
+
+		foreach (var product in products_1)
 		{
-			if(product.CheckExpirationDate(now).Contains("Expired!"))
-			{
-				Console.WriteLine("\n" + product.GetInfo() + product.CheckExpirationDate(now));
-			}
+			Console.WriteLine(product.GetInfo());
 		}
+
+		//Remove all products.
+		products_1.Clear();
+
+
 
 		//HomeTask 1 lesson 8
 		//var form_Correct = AuthorizationForm.CheckException("Anastasiya", "test1", "test1");

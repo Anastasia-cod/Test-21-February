@@ -12,7 +12,7 @@ namespace VS_21_February.Task9
 
 		public override string GetInfo()
 		{
-			return $"Product name: {ProductName}. Price: {Price}. Number of items in a batch: {Quantity}. Production Date: {ProductionDate}. Expiration number (Days): {ExpirationNumberDays}";
+			return $"Product name: {ProductName}. Price: {Price}. Number of items in a batch: {Quantity}. Production Date: {ProductionDate}. Expiration number (Days): {ExpirationNumberDays}.";
 		}
 	}
 }
