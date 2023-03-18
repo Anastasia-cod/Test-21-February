@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using VS_21_February;
 using Microsoft.VisualBasic;
 using System.ComponentModel;
@@ -8,15 +9,57 @@ class Hello
 {
 	static void Main(string[] args)
 	{
-		var form_Correct = AuthorizationForm.CheckException("Anastasiya", "test1", "test1");
-		var loginIncorrect = AuthorizationForm.CheckException("Kate ", "newss1", "newss1");
-		var passwordIncorrect = AuthorizationForm.CheckException("Violeta", "testpassword", "testpassword");
-		var confirmationPassworddIncorrect = AuthorizationForm.CheckException("Maksim", "check0425ddd!newd", "check0425dd!newdd");
+		//Home task 0.1 lesson 9
+		ArrayList list = new ArrayList();
+		list.AddRange(new string[] { "Different types", "Test", "New" });
+		list.Add(5.5);
+		list.Add(25);
+		list.Add(19);
 
-		Console.WriteLine(form_Correct);
-		Console.WriteLine(loginIncorrect);
-		Console.WriteLine(passwordIncorrect);
-		Console.WriteLine(confirmationPassworddIncorrect);
+		try
+		{
+			object s = list[18];
+		}
+		catch (ArgumentOutOfRangeException ex)
+		{
+			Console.WriteLine($"Catch the exception:\n{ex.Message}");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"\n{ex.Message}");
+		}
+
+		//Home task 0.2 lesson 9
+		var dogBreed = new Dictionary<int, string>()
+		{
+			[1] = "Labrador Retriever",
+			[2] = "Akita",
+			[3] = "Weimaraner",
+			[4] = "Border Collie",
+			[5] = "Bulldog",
+			[6] = "King Charles Spaniel",
+			[7] = "Chow Chow",
+			[8] = "Dalmatian",
+			[9] = "Doberman",
+			[10] = "Pug Dog"
+		};
+
+		foreach(var dog in dogBreed)
+		{
+			Console.WriteLine($"Key: {dog.Key}, value: {dog.Value}");
+		}
+
+
+		//HomeTask 1 lesson 8
+		//var form_Correct = AuthorizationForm.CheckException("Anastasiya", "test1", "test1");
+		//var loginIncorrect = AuthorizationForm.CheckException("Kate ", "newss1", "newss1");
+		//var passwordIncorrect = AuthorizationForm.CheckException("Violeta", "testpassword", "testpassword");
+		//var confirmationPassworddIncorrect = AuthorizationForm.CheckException("Maksim", "check0425ddd!newd", "check0425dd!newdd");
+
+		//Console.WriteLine(form_Correct);
+		//Console.WriteLine(loginIncorrect);
+		//Console.WriteLine(passwordIncorrect);
+		//Console.WriteLine(confirmationPassworddIncorrect);
 
 		//HomeTask 1 lesson 7
 		//Public autopark
