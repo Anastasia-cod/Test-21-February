@@ -16,17 +16,17 @@ namespace VS_21_February.Task9
 			ExpirationNumberDays = expirationNumberDays;
 		}
 
-        protected Product(string productName, double price)
-        {
-            ProductName = productName;
-            Price = price;
-        }
+		protected Product(string productName, double price)
+		{
+			ProductName = productName;
+			Price = price;
+		}
 
-        /// <summary>
-        /// Display product information
-        /// </summary>
-        /// <returns></returns>
-        public virtual string GetInfo()
+		/// <summary>
+		/// Display product information
+		/// </summary>
+		/// <returns></returns>
+		public virtual string GetInfo()
 		{
 			return $"Product name: {ProductName}. Price: {Price}.";
 		}
@@ -40,7 +40,7 @@ namespace VS_21_February.Task9
 		{
 			if(today > ProductionDate.AddDays(Convert.ToDouble(ExpirationNumberDays)))
 			{
-				return "Expired!";
+				return "\nExpired! Expired from date: "+ ProductionDate.AddDays(Convert.ToDouble(ExpirationNumberDays));
 			}
 
 			return "The product is ok. The expiration date is coming: " + ProductionDate.AddDays(Convert.ToDouble(ExpirationNumberDays));
