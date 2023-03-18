@@ -1,7 +1,7 @@
 ﻿using System;
 namespace VS_21_February.Task9
 {
-	public abstract class Product
+	public abstract class Product : ICheckPrice, IComparable<Product>
 	{
 		public string ProductName { get; set; }
 		public double Price { get; set; }
@@ -44,6 +44,26 @@ namespace VS_21_February.Task9
 			}
 
 			return "The product is ok. The expiration date is coming: " + ProductionDate.AddDays(Convert.ToDouble(ExpirationNumberDays));
+		}
+
+		public string ICheckPriceMore300()
+		{
+			if (Price > 300)
+			{
+				return "true";
+			}
+
+			return "false";
+		}
+
+		int IComparable<Product>.CompareTo(Product? other)
+		{
+			if (other.Price > this.Price)
+				return -1;
+			else if (other.Price == this.Price)
+				return 0;
+			else
+				return 1;
 		}
 	}
 }
