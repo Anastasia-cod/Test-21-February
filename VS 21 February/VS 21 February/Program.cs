@@ -190,6 +190,7 @@ class Hello
 		Console.WriteLine(String.Join(",\n", coversionDictionaryToList));
 
 		//Write a List to Dictionary conversion.
+		//https://learn.microsoft.com/ru-ru/dotnet/api/system.linq.enumerable.todictionary?view=net-7.0
 		List<Product> products_3 = new List<Product>()
 		{
 			new ProductsInShop("Shrimps frozen", 40.5),
