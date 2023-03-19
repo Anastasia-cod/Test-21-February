@@ -22,6 +22,11 @@ namespace VS_21_February.Task9
 			Price = price;
 		}
 
+		protected Product(string productName)
+		{
+			ProductName = productName;
+		}
+
 		/// <summary>
 		/// Display product information
 		/// </summary>
@@ -64,6 +69,11 @@ namespace VS_21_February.Task9
 				return 0;
 			else
 				return 1;
+		}
+
+		public override string ToString()
+		{
+			return string.Format($"Product Name: {ProductName}, Product Price: {Price}");
 		}
 	}
 }

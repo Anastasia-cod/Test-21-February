@@ -127,249 +127,275 @@ class Hello
 			new ProductsInShop("Langoustines frozen", 480, DateTime.Parse("03.18.2023"), 150),
 		};
 
-		foreach(var product in products_2)
+		List<Product> productsHighPrice = new ();
+
+		foreach (var product in products_2.ToList())
 		{
 			if (product.ICheckPriceMore300().Contains("true"))
 			{
-                var productsHighPrice = products_2;
-
-                Console.WriteLine(product.GetInfo());
-
-				Product min = productsHighPrice.Min();
-
-                Console.WriteLine("The minimum product price is {0}.", min.ProductName);
-
-
-            }
+				productsHighPrice.Add(product);
+				products_2.Remove(product);
+			}		
 		}
 
+		Console.WriteLine("\nProducts with price < 300\n");
+
+		foreach (var product in products_2.ToList())
+		{
+			Console.WriteLine(product.GetInfo());
+		}
+
+		Console.WriteLine("\nNew collection products with price > 300:\n");
+
+		productsHighPrice.Sort();
+
+		foreach (var product in productsHighPrice)
+		{
+			Console.WriteLine(product.GetInfo());
+		}
+
+		Console.WriteLine($"\nMinimum price: {productsHighPrice.Min()}");
+
+		//HomeTask 1.3 lesson 9
+		//var productAvailable = new Dictionary<Product, int>()
+		//{
+		//	[new ProductsInShop("Almond croissant")] = 20,
+		//	[new ProductsInShop("Smoked salmon")] = 30,
+		//	[new ProductsInShop("Black bread")] = 18,
+		//	[new ProductsInShop("Red caviar")] = 10,
+		//	[new ProductsInShop("Сottage cheese")] = 7,
+		//	[new ProductsInShop("Cake Napoleon")] = 3,
+		//	[new ProductsInShop("Sausage")] = 6,
+		//};
+
+		//foreach (var product in productAvailable)
+		//{
+
+		//	Console.WriteLine($"Name = {product.Key.ToString},Count = {product.Value}");
+		//}
+
+		//HomeTask 1 lesson 8
+		//var form_Correct = AuthorizationForm.CheckException("Anastasiya", "test1", "test1");
+		//var loginIncorrect = AuthorizationForm.CheckException("Kate ", "newss1", "newss1");
+		//var passwordIncorrect = AuthorizationForm.CheckException("Violeta", "testpassword", "testpassword");
+		//var confirmationPassworddIncorrect = AuthorizationForm.CheckException("Maksim", "check0425ddd!newd", "check0425dd!newdd");
+
+		//Console.WriteLine(form_Correct);
+		//Console.WriteLine(loginIncorrect);
+		//Console.WriteLine(passwordIncorrect);
+		//Console.WriteLine(confirmationPassworddIncorrect);
+
+		//HomeTask 1 lesson 7
+		//Public autopark
+		//Bus bus_1 = new Bus("Minsk - Gomel", "2290-NB-3", "14:30", 30);
+		//Trolleybus trolleybus_1 = new Trolleybus("DS Kyntsevshina - DS Malinovka", "9917-VS-5", "12:25", 83);
+		//Tramcar tramcar_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
+		//Bus bus_2 = new Bus("Minsk - Berlin", "7777-NN-7", "06:20", 28);
+		//Trolleybus trolleybus_2 = new Trolleybus("DS Kyntsevshina - DS Malinovka", "7717-VS-6", "14:15", 70);
+
+		////Interface IGetInfo
+		//bus_1.GetInfo();
+		//trolleybus_1.GetInfo();
+		//tramcar_1.GetInfo();
+
+		////Define in the superclass (class PublicTransport) a method that returns the type of transport (Electric, Rail, etc.).
+		////Override this method in derived classes.
+		//Console.WriteLine(bus_1.ReturnType());
+		//Console.WriteLine(trolleybus_1.ReturnType());
+		//Console.WriteLine(tramcar_1.ReturnType());
+
+		////Sort the transport by the number of seats and output the data of the objects to the console.
+		////I use: https://www.techiedelight.com/ru/sort-an-array-of-objects-by-a-specific-field-in-csharp/
+		//var arrayPublicTransport = new PublicTransport[] { bus_1, bus_2, trolleybus_1, tramcar_1, trolleybus_2 };
+
+		//var sorted = arrayPublicTransport.OrderBy(ob => ob.NumberOfSeats).ToArray();
+
+		//Array.ForEach(sorted, Console.WriteLine);
+
+		////Ask the user for a departure time and/or destination.
+		////Find an object in the array that matches the given parameters and output its data to the console.
+		//Console.WriteLine("Please enter the departure time");
+
+		//string? timeFromUser = Console.ReadLine();
+
+		//Console.WriteLine("Please enter the Destination");
+
+		//string? destinationFromUser = Console.ReadLine();
+
+		//foreach (var transport in arrayPublicTransport)
+		//{
+		//    if(transport.DepartureTime == timeFromUser || transport.Destination == destinationFromUser)
+		//    {
+		//        Console.WriteLine(string.Format("{0}, {1}, {2}", transport.Number, transport.Destination, transport.DepartureTime));
+		//    }
+		//}
+
+		////Ask the user for a departure time.
+		////Print to the console a list of vehicles leaving after the specified time.
+		//Console.WriteLine("Please enter the departure time");
+
+		//string? timeFromUser_2 = Console.ReadLine();
+		//DateTime dateTime = DateTime.Parse(timeFromUser_2);
+
+		//foreach (var transport in arrayPublicTransport)
+		//{
+		//    if (DateTime.Parse(transport.DepartureTime) > dateTime)
+		//    {
+		//        Console.WriteLine(string.Format("{0}, {1}, {2}", transport.DepartureTime, transport.Number, transport.Destination));
+		//    }
+		//}
 
+		////Sealed method NumberOfTrips
+		//PublicTransport transport_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
+		//transport_1.NumberOfTrips();
+		//bus_1.NumberOfTrips();
 
+		////Create a TransportService class.
+		////Define a printTransportType method inside the TransportService class that will accept an object of type Transport as a parameter.
+		////Inside the printTransportType method, you need to call another method that returns the transport type and print this information to the console.
+		//Console.WriteLine(new TransportService().PrintTransportType(tramcar_1));
+		//Console.WriteLine(new TransportService().PrintTransportType(trolleybus_1));
+		//Console.WriteLine(new TransportService().PrintTransportType(bus_1));
 
+		//////HomeTask 1 lesson 6
+		//Triangles triangle_1 = new TriangleBuilder().CreateTriangle(5, 5, 8);
+		//Triangles triangle_2 = new TriangleBuilder().CreateTriangle(6, 6, 6);
+		//Triangles triangle_3 = new TriangleBuilder().CreateTriangle(3, 4, 5);
+		//Triangles triangle_4 = new TriangleBuilder().CreateTriangle(9, 13, 14);
 
+		//Console.Write(triangle_1.GetSquare());
+		//Console.Write(triangle_2.GetSquare());
+		//Console.Write(triangle_3.GetSquare());
+		//Console.Write(triangle_4.GetSquare());
 
-        //HomeTask 1 lesson 8
-        //var form_Correct = AuthorizationForm.CheckException("Anastasiya", "test1", "test1");
-        //var loginIncorrect = AuthorizationForm.CheckException("Kate ", "newss1", "newss1");
-        //var passwordIncorrect = AuthorizationForm.CheckException("Violeta", "testpassword", "testpassword");
-        //var confirmationPassworddIncorrect = AuthorizationForm.CheckException("Maksim", "check0425ddd!newd", "check0425dd!newdd");
+		//Rectangle rectangle_1 = new RectangleBuilder().CreateRectangle(9, 10);
+		//Rectangle rectangle_2 = new RectangleBuilder().CreateRectangle(15, 15);
 
-        //Console.WriteLine(form_Correct);
-        //Console.WriteLine(loginIncorrect);
-        //Console.WriteLine(passwordIncorrect);
-        //Console.WriteLine(confirmationPassworddIncorrect);
+		//Console.Write(rectangle_1.GetSquare());
+		//Console.Write(rectangle_2.GetSquare());
 
-        //HomeTask 1 lesson 7
-        //Public autopark
-        //Bus bus_1 = new Bus("Minsk - Gomel", "2290-NB-3", "14:30", 30);
-        //Trolleybus trolleybus_1 = new Trolleybus("DS Kyntsevshina - DS Malinovka", "9917-VS-5", "12:25", 83);
-        //Tramcar tramcar_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
-        //Bus bus_2 = new Bus("Minsk - Berlin", "7777-NN-7", "06:20", 28);
-        //Trolleybus trolleybus_2 = new Trolleybus("DS Kyntsevshina - DS Malinovka", "7717-VS-6", "14:15", 70);
-
-        ////Interface IGetInfo
-        //bus_1.GetInfo();
-        //trolleybus_1.GetInfo();
-        //tramcar_1.GetInfo();
+		//var arrayFigures = new Figure[] { triangle_1, triangle_2, triangle_3, triangle_4, rectangle_1, rectangle_2 };
 
-        ////Define in the superclass (class PublicTransport) a method that returns the type of transport (Electric, Rail, etc.).
-        ////Override this method in derived classes.
-        //Console.WriteLine(bus_1.ReturnType());
-        //Console.WriteLine(trolleybus_1.ReturnType());
-        //Console.WriteLine(tramcar_1.ReturnType());
-
-        ////Sort the transport by the number of seats and output the data of the objects to the console.
-        ////I use: https://www.techiedelight.com/ru/sort-an-array-of-objects-by-a-specific-field-in-csharp/
-        //var arrayPublicTransport = new PublicTransport[] { bus_1, bus_2, trolleybus_1, tramcar_1, trolleybus_2 };
-
-        //var sorted = arrayPublicTransport.OrderBy(ob => ob.NumberOfSeats).ToArray();
+		//foreach (var figure in arrayFigures)
+		//{
+		//    if (figure != null)
+		//    {
+		//        Console.Write(figure.GetSquare().ToString("#.###"));
+		//    }
+		//}
 
-        //Array.ForEach(sorted, Console.WriteLine);
+		////HomeTask 2 lesson 6
+		//Doctor doctor_1 = new Doctor("Alexander Derytev", 10, 1);
+		//Doctor doctor_2 = new Doctor("Alesya Nogertty", 4, 2);
+		//Doctor doctor_3 = new Doctor("Kirill Vasendor", 8, 1);
 
-        ////Ask the user for a departure time and/or destination.
-        ////Find an object in the array that matches the given parameters and output its data to the console.
-        //Console.WriteLine("Please enter the departure time");
+		//Patient patient_1 = new Patient("Viacheslav Parsen", 25);
+		//Patient patient_2 = new Patient("Kelly Brandy", 54);
+		//Patient patient_3 = new Patient("Andrey Villy", 18);
 
-        //string? timeFromUser = Console.ReadLine();
+		//TreatmentPlan treatmentPlan_1 = new TreatmentPlan(patient_1, 1, doctor_1);
+		//TreatmentPlan treatmentPlan_2 = new TreatmentPlan(patient_2, 1, doctor_2);
+		//TreatmentPlan treatmentPlan_3 = new TreatmentPlan(patient_3, 1, doctor_3);
 
-        //Console.WriteLine("Please enter the Destination");
+		//Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_1, 1, doctor_1).Treat());
+		//Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_2, 2, doctor_2).Treat());
+		//Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_3, 3, doctor_3).Treat());
 
-        //string? destinationFromUser = Console.ReadLine();
+		////Home task lesson 5
+		////First Home Task
+		//VS_21_February.Phone iphone_13 = new VS_21_February.Phone();
 
-        //foreach (var transport in arrayPublicTransport)
-        //{
-        //    if(transport.DepartureTime == timeFromUser || transport.Destination == destinationFromUser)
-        //    {
-        //        Console.WriteLine(string.Format("{0}, {1}, {2}", transport.Number, transport.Destination, transport.DepartureTime));
-        //    }
-        //}
+		//iphone_13.number = "13";
+		//iphone_13.model = "Iphone";
+		//iphone_13.weight = 0.173;
 
-        ////Ask the user for a departure time.
-        ////Print to the console a list of vehicles leaving after the specified time.
-        //Console.WriteLine("Please enter the departure time");
+		//VS_21_February.Phone samsung_Galaxy = new VS_21_February.Phone();
 
-        //string? timeFromUser_2 = Console.ReadLine();
-        //DateTime dateTime = DateTime.Parse(timeFromUser_2);
+		//samsung_Galaxy.number = "S 23";
+		//samsung_Galaxy.model = "Samsung Galaxy S Ultra";
+		//samsung_Galaxy.weight = 0.234;
 
-        //foreach (var transport in arrayPublicTransport)
-        //{
-        //    if (DateTime.Parse(transport.DepartureTime) > dateTime)
-        //    {
-        //        Console.WriteLine(string.Format("{0}, {1}, {2}", transport.DepartureTime, transport.Number, transport.Destination));
-        //    }
-        //}
+		//VS_21_February.Phone huawei = new VS_21_February.Phone();
 
-        ////Sealed method NumberOfTrips
-        //PublicTransport transport_1 = new Tramcar("DS Zeleny Lyg - Myasnikova", "7760-AZ-6", "08:17", 100);
-        //transport_1.NumberOfTrips();
-        //bus_1.NumberOfTrips();
+		//huawei.number = "P50";
+		//huawei.model = "Huawei Pro";
+		//huawei.weight = 0.195;
 
-        ////Create a TransportService class.
-        ////Define a printTransportType method inside the TransportService class that will accept an object of type Transport as a parameter.
-        ////Inside the printTransportType method, you need to call another method that returns the transport type and print this information to the console.
-        //Console.WriteLine(new TransportService().PrintTransportType(tramcar_1));
-        //Console.WriteLine(new TransportService().PrintTransportType(trolleybus_1));
-        //Console.WriteLine(new TransportService().PrintTransportType(bus_1));
+		//Console.WriteLine($"Phone 1: number {iphone_13.number}, model {iphone_13.model}, weight {iphone_13.weight}");
+		//Console.WriteLine($"Phone 2: number {samsung_Galaxy.number}, model {samsung_Galaxy.model}, weight {samsung_Galaxy.weight}");
+		//Console.WriteLine($"Phone 3: number {huawei.number}, model {huawei.model}, weight {huawei.weight}");
 
-        //////HomeTask 1 lesson 6
-        //Triangles triangle_1 = new TriangleBuilder().CreateTriangle(5, 5, 8);
-        //Triangles triangle_2 = new TriangleBuilder().CreateTriangle(6, 6, 6);
-        //Triangles triangle_3 = new TriangleBuilder().CreateTriangle(3, 4, 5);
-        //Triangles triangle_4 = new TriangleBuilder().CreateTriangle(9, 13, 14);
+		////Method ReceiveCall
+		//iphone_13.ReceiveCall("Masha");
 
-        //Console.Write(triangle_1.GetSquare());
-        //Console.Write(triangle_2.GetSquare());
-        //Console.Write(triangle_3.GetSquare());
-        //Console.Write(triangle_4.GetSquare());
+		//samsung_Galaxy.ReceiveCall("Michael");
 
-        //Rectangle rectangle_1 = new RectangleBuilder().CreateRectangle(9, 10);
-        //Rectangle rectangle_2 = new RectangleBuilder().CreateRectangle(15, 15);
+		//huawei.ReceiveCall("Elizaveta");
 
-        //Console.Write(rectangle_1.GetSquare());
-        //Console.Write(rectangle_2.GetSquare());
+		////Method GetNumber
+		//iphone_13.phoneNumber = 80441371010;
+		//iphone_13.GetNumber();
 
-        //var arrayFigures = new Figure[] { triangle_1, triangle_2, triangle_3, triangle_4, rectangle_1, rectangle_2 };
+		//Console.WriteLine(iphone_13.phoneNumber);
 
-        //foreach (var figure in arrayFigures)
-        //{
-        //    if (figure != null)
-        //    {
-        //        Console.Write(figure.GetSquare().ToString("#.###"));
-        //    }
-        //}
+		//samsung_Galaxy.phoneNumber = 80293386767;
+		//samsung_Galaxy.GetNumber();
 
-        ////HomeTask 2 lesson 6
-        //Doctor doctor_1 = new Doctor("Alexander Derytev", 10, 1);
-        //Doctor doctor_2 = new Doctor("Alesya Nogertty", 4, 2);
-        //Doctor doctor_3 = new Doctor("Kirill Vasendor", 8, 1);
+		//Console.WriteLine(samsung_Galaxy.phoneNumber);
 
-        //Patient patient_1 = new Patient("Viacheslav Parsen", 25);
-        //Patient patient_2 = new Patient("Kelly Brandy", 54);
-        //Patient patient_3 = new Patient("Andrey Villy", 18);
+		//huawei.phoneNumber = 80449480999;
+		//huawei.GetNumber();
 
-        //TreatmentPlan treatmentPlan_1 = new TreatmentPlan(patient_1, 1, doctor_1);
-        //TreatmentPlan treatmentPlan_2 = new TreatmentPlan(patient_2, 1, doctor_2);
-        //TreatmentPlan treatmentPlan_3 = new TreatmentPlan(patient_3, 1, doctor_3);
+		//Console.WriteLine(huawei.phoneNumber);
 
-        //Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_1, 1, doctor_1).Treat());
-        //Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_2, 2, doctor_2).Treat());
-        //Console.WriteLine(treatmentPlan_1.SelectDoctor(patient_3, 3, doctor_3).Treat());
+		////Constructor with 2 parametres
+		//VS_21_February.Phone lenovo = new("K14", "Lenovo");
 
-        ////Home task lesson 5
-        ////First Home Task
-        //VS_21_February.Phone iphone_13 = new VS_21_February.Phone();
+		//Console.WriteLine($"Phone 4: number {lenovo.number}, model {lenovo.model}, weight {lenovo.weight}");
 
-        //iphone_13.number = "13";
-        //iphone_13.model = "Iphone";
-        //iphone_13.weight = 0.173;
+		////overloaded method ReceiveCall
+		//iphone_13.ReceiveCall("Nastya", 80447222525);
 
-        //VS_21_February.Phone samsung_Galaxy = new VS_21_February.Phone();
+		////Method SendMessage
+		//samsung_Galaxy.SendMessage(80293334567, 80447568990, 80445682130, 80297775507);
 
-        //samsung_Galaxy.number = "S 23";
-        //samsung_Galaxy.model = "Samsung Galaxy S Ultra";
-        //samsung_Galaxy.weight = 0.234;
+		//huawei.SendMessage();
 
-        //VS_21_February.Phone huawei = new VS_21_February.Phone();
+		////Second Home Task
+		//VS_21_February.CreditCard card_1 = new VS_21_February.CreditCard();
 
-        //huawei.number = "P50";
-        //huawei.model = "Huawei Pro";
-        //huawei.weight = 0.195;
+		//card_1.accountNumber = "BY11ALFA100110DA7U9910101000";
+		//card_1.currentSumm = 51000.5;
 
-        //Console.WriteLine($"Phone 1: number {iphone_13.number}, model {iphone_13.model}, weight {iphone_13.weight}");
-        //Console.WriteLine($"Phone 2: number {samsung_Galaxy.number}, model {samsung_Galaxy.model}, weight {samsung_Galaxy.weight}");
-        //Console.WriteLine($"Phone 3: number {huawei.number}, model {huawei.model}, weight {huawei.weight}");
+		//VS_21_February.CreditCard card_2 = new VS_21_February.CreditCard();
 
-        ////Method ReceiveCall
-        //iphone_13.ReceiveCall("Masha");
+		//card_2.accountNumber = "BY24ALFA200160PP7U0670101001";
+		//card_2.currentSumm = 145000.9;
 
-        //samsung_Galaxy.ReceiveCall("Michael");
+		//VS_21_February.CreditCard card_3 = new VS_21_February.CreditCard();
 
-        //huawei.ReceiveCall("Elizaveta");
+		//card_3.accountNumber = "BY97ALFA110960SE7K0990401003";
+		//card_3.currentSumm = 28000.3;
 
-        ////Method GetNumber
-        //iphone_13.phoneNumber = 80441371010;
-        //iphone_13.GetNumber();
+		//card_1.AccrualMoney(8000.5);
 
-        //Console.WriteLine(iphone_13.phoneNumber);
+		//card_2.AccrualMoney(14700);
 
-        //samsung_Galaxy.phoneNumber = 80293386767;
-        //samsung_Galaxy.GetNumber();
+		//card_3.WithdrawalMoney(30000);
 
-        //Console.WriteLine(samsung_Galaxy.phoneNumber);
+		//card_1.CurrentStatus();
 
-        //huawei.phoneNumber = 80449480999;
-        //huawei.GetNumber();
+		//card_2.CurrentStatus();
 
-        //Console.WriteLine(huawei.phoneNumber);
+		//card_3.CurrentStatus();
 
-        ////Constructor with 2 parametres
-        //VS_21_February.Phone lenovo = new("K14", "Lenovo");
+		////Third Home Task partially performed
+		//VS_21_February.CashMachine atm_1 = new(1, 1, 1);
 
-        //Console.WriteLine($"Phone 4: number {lenovo.number}, model {lenovo.model}, weight {lenovo.weight}");
+		//atm_1.DepositingMoney(1, 1, 1);
 
-        ////overloaded method ReceiveCall
-        //iphone_13.ReceiveCall("Nastya", 80447222525);
-
-        ////Method SendMessage
-        //samsung_Galaxy.SendMessage(80293334567, 80447568990, 80445682130, 80297775507);
-
-        //huawei.SendMessage();
-
-        ////Second Home Task
-        //VS_21_February.CreditCard card_1 = new VS_21_February.CreditCard();
-
-        //card_1.accountNumber = "BY11ALFA100110DA7U9910101000";
-        //card_1.currentSumm = 51000.5;
-
-        //VS_21_February.CreditCard card_2 = new VS_21_February.CreditCard();
-
-        //card_2.accountNumber = "BY24ALFA200160PP7U0670101001";
-        //card_2.currentSumm = 145000.9;
-
-        //VS_21_February.CreditCard card_3 = new VS_21_February.CreditCard();
-
-        //card_3.accountNumber = "BY97ALFA110960SE7K0990401003";
-        //card_3.currentSumm = 28000.3;
-
-        //card_1.AccrualMoney(8000.5);
-
-        //card_2.AccrualMoney(14700);
-
-        //card_3.WithdrawalMoney(30000);
-
-        //card_1.CurrentStatus();
-
-        //card_2.CurrentStatus();
-
-        //card_3.CurrentStatus();
-
-        ////Third Home Task partially performed
-        //VS_21_February.CashMachine atm_1 = new(1, 1, 1);
-
-        //atm_1.DepositingMoney(1, 1, 1);
-
-        //atm_1.WithdrawalMoney(350);
-    }
+		//atm_1.WithdrawalMoney(350);
+	}
 
 	public static void Lesson1_Task1()
 	{

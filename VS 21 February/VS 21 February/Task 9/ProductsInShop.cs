@@ -9,6 +9,10 @@ namespace VS_21_February.Task9
 		{
 		}
 
+		public ProductsInShop(string productName) : base(productName)
+		{
+		}
+
 		public override string GetInfo()
 		{
 			return $"Product name: {ProductName}. Price: {Price}. Production Date: {ProductionDate}. Expiration number (Days): {ExpirationNumberDays}.";
