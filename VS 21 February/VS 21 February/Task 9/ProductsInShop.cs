@@ -9,6 +9,10 @@ namespace VS_21_February.Task9
 		{
 		}
 
+		public ProductsInShop(string productName, double price) : base(productName, price)
+		{
+		}
+
 		public ProductsInShop(string productName) : base(productName)
 		{
 		}

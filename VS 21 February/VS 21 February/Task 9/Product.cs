@@ -51,6 +51,10 @@ namespace VS_21_February.Task9
 			return "The product is ok. The expiration date is coming: " + ProductionDate.AddDays(Convert.ToDouble(ExpirationNumberDays));
 		}
 
+		/// <summary>
+		/// Check if the price more than 300, return true or false
+		/// </summary>
+		/// <returns></returns>
 		public string ICheckPriceMore300()
 		{
 			if (Price > 300)
@@ -61,6 +65,11 @@ namespace VS_21_February.Task9
 			return "false";
 		}
 
+		/// <summary>
+		/// Compare to Price
+		/// </summary>
+		/// <param name="other"></param>
+		/// <returns></returns>
 		int IComparable<Product>.CompareTo(Product? other)
 		{
 			if (other.Price > this.Price)
@@ -73,7 +82,7 @@ namespace VS_21_February.Task9
 
 		public override string ToString()
 		{
-			return string.Format($"Product Name: {ProductName}, Product Price: {Price}");
+			return string.Format($"Product Name: {ProductName}");
 		}
 	}
 }
