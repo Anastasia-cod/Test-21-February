@@ -129,13 +129,10 @@ class Hello
 
 		List<Product> productsHighPrice = new();
 
+
 		foreach (var product in products_2.ToList())
 		{
-			if (product.ICheckPriceMore300().Contains("true"))
-			{
-				productsHighPrice.Add(product);
-				products_2.Remove(product);
-			}
+			product.MoveElementToNewCollection(products_2, productsHighPrice);
 		}
 
 		Console.WriteLine("\nProducts with price < 300\n");

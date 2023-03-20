@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace VS_21_February.Task9
 {
 	public abstract class Product : ICheckPrice, IComparable<Product>
@@ -63,6 +65,18 @@ namespace VS_21_February.Task9
 			}
 
 			return "false";
+		}
+
+		public void MoveElementToNewCollection(List<Product> first, List <Product> second)
+		{
+			foreach (var product in first.ToList())
+			{
+				if (product.ICheckPriceMore300().Contains("true"))
+				{
+					second.Add(product);
+					first.Remove(product);
+				}
+			}
 		}
 
 		/// <summary>
