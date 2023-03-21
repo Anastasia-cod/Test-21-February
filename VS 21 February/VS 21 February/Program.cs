@@ -1,22 +1,222 @@
 using System;
+using System.Collections;
 using VS_21_February;
 using Microsoft.VisualBasic;
-using System.ComponentModel;
-using VS_21_February.Task7.autopark;
-using VS_21_February.Task8.exception;
+using VS_21_February.Task9;
 class Hello
 {
 	static void Main(string[] args)
 	{
-		var form_Correct = AuthorizationForm.CheckException("Anastasiya", "test1", "test1");
-		var loginIncorrect = AuthorizationForm.CheckException("Kate ", "newss1", "newss1");
-		var passwordIncorrect = AuthorizationForm.CheckException("Violeta", "testpassword", "testpassword");
-		var confirmationPassworddIncorrect = AuthorizationForm.CheckException("Maksim", "check0425ddd!newd", "check0425dd!newdd");
+		//Home task 0.1 lesson 9
+		ArrayList list = new ArrayList();
+		list.AddRange(new string[] { "Different types", "Test", "New" });
+		list.Add(5.5);
+		list.Add(25);
+		list.Add(19);
 
-		Console.WriteLine(form_Correct);
-		Console.WriteLine(loginIncorrect);
-		Console.WriteLine(passwordIncorrect);
-		Console.WriteLine(confirmationPassworddIncorrect);
+		try
+		{
+			object s = list[18];
+		}
+		catch (ArgumentOutOfRangeException ex)
+		{
+			Console.WriteLine($"Catch the exception:\n{ex.Message}");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"\n{ex.Message}");
+		}
+
+		//Home task 0.2 lesson 9
+		var dogBreed = new Dictionary<int, string>()
+		{
+			[1] = "Labrador Retriever",
+			[2] = "Akita",
+			[3] = "Weimaraner",
+			[4] = "Border Collie",
+			[5] = "Bulldog",
+			[6] = "King Charles Spaniel",
+			[7] = "Chow Chow",
+			[8] = "Dalmatian",
+			[9] = "Doberman",
+			[10] = "Pug Dog"
+		};
+
+		foreach (var dog in dogBreed)
+		{
+			Console.WriteLine($"Number: {dog.Key}, Dog Breed: {dog.Value}");
+		}
+
+		//HomeTask 1 lesson 9
+		List<Product> products = new List<Product>()
+		{
+			new ProductsInShop("Cake Napoleon", 45.5, DateTime.Parse("03.10.2023 14:40"), 9),
+			new ProductsInShop("Oat milk", 8, DateTime.Parse("03.05.2023"), 30),
+			new ProductsInShop("Pomelo", 9, DateTime.Parse("02.25.2023"), 28),
+			new ProductsInShop("Sausage", 10, DateTime.Parse("03.08.2023"), 14),
+			new ProductsInShop("Buckwheat", 8, DateTime.Parse("12.21.2022"), 180),
+			new ProductsInShop("Сrab sticks", 9, DateTime.Parse("06.09.2022"), 220),
+			new Batch("Greenfield tea", 7.5, 25, DateTime.Parse("08.25.2022"), 360),
+			new Batch("Сoffee Dallmayr", 16, 40, DateTime.Parse("12.21.2022"), 360),
+			new Batch("Cookies BelVita", 6, 50, DateTime.Parse("01.01.2023"), 180),
+			new Batch("Cheese Parmezan", 25, 100, DateTime.Parse("03.06.2023"), 120),
+			new Batch("Cream", 12, 20, DateTime.Parse("02.18.2023"), 14),
+		};
+
+		DateTime now = DateTime.Now;
+
+		//Display full information from the database on the screen
+		foreach (var product in products)
+		{
+			Console.WriteLine($"\n{product.GetInfo()}\nCheck expiration date: {product.CheckExpirationDate(now)}");
+		}
+
+		////Search for expired goods (at the time of the current date)
+
+		Console.WriteLine("\nThe expiration date products:");
+
+		foreach (var product in products)
+		{
+			if (product.CheckExpirationDate(now).Contains("Expired!"))
+			{
+				Console.WriteLine("\n" + product.GetInfo() + product.CheckExpirationDate(now));
+			}
+		}
+
+		//HomeTask 1.1 lesson 9
+		List<Product> products_1 = new List<Product>()
+		{
+			new ProductsInShop("Almond croissant", 10, DateTime.Parse("03.18.2023 08:40"), 2),
+			new ProductsInShop("Smoked salmon", 21, DateTime.Parse("03.16.2023"), 30),
+			new ProductsInShop("Black bread", 5.5, DateTime.Parse("03.18.2023"), 5),
+			new ProductsInShop("Red caviar", 45, DateTime.Parse("03.01.2023"), 90),
+			new ProductsInShop("Сottage cheese", 7, DateTime.Parse("03.07.2023"), 60),
+		};
+
+		foreach (var product in products_1)
+		{
+			Console.WriteLine(product.GetInfo());
+		}
+
+		//Change the price of one product by 100.
+		products_1[3] = new ProductsInShop("Red caviar", 100, DateTime.Parse("03.01.2023"), 90);
+
+		//Delete the last product.
+		products_1.RemoveAt(products_1.Count - 1);
+
+		Console.WriteLine("\nAfter deletion the last product:");
+
+		foreach (var product in products_1)
+		{
+			Console.WriteLine(product.GetInfo());
+		}
+
+		//Remove all products.
+		products_1.Clear();
+
+		//HomeTask 1.2 lesson 9
+		List<Product> products_2 = new List<Product>()
+		{
+			new ProductsInShop("Shrimps frozen", 150, DateTime.Parse("03.18.2023 08:40"), 150),
+			new ProductsInShop("Salmon steak frozen", 310, DateTime.Parse("03.16.2023"), 150),
+			new ProductsInShop("Black caviar", 550, DateTime.Parse("03.18.2023"), 110),
+			new ProductsInShop("Red caviar", 300.5, DateTime.Parse("03.01.2023"), 90),
+			new ProductsInShop("Goat cheese", 420, DateTime.Parse("03.07.2023"), 60),
+			new ProductsInShop("Shark frozen", 650, DateTime.Parse("03.01.2023"), 120),
+			new ProductsInShop("Hazelnut cake", 120, DateTime.Parse("03.16.2023"), 6),
+			new ProductsInShop("Langoustines frozen", 480, DateTime.Parse("03.18.2023"), 150),
+		};
+
+		List<Product> productsHighPrice = new();
+
+
+		foreach (var product in products_2.ToList())
+		{
+			product.MoveElementToNewCollection(products_2, productsHighPrice);
+		}
+
+		Console.WriteLine("\nProducts with price < 300\n");
+
+		foreach (var product in products_2.ToList())
+		{
+			Console.WriteLine(product.GetInfo());
+		}
+
+		Console.WriteLine("\nNew collection products with price > 300:\n");
+
+		productsHighPrice.Sort();
+
+		foreach (var product in productsHighPrice)
+		{
+			Console.WriteLine(product.GetInfo());
+		}
+
+		Console.WriteLine($"\nMinimum price: {productsHighPrice.Min()}");
+
+		//HomeTask 1.3 lesson 9
+		var productAvailable = new Dictionary<Product, int>()
+		{
+			[new ProductsInShop("Almond croissant")] = 20,
+			[new ProductsInShop("Smoked salmon")] = 30,
+			[new ProductsInShop("Black bread")] = 18,
+			[new ProductsInShop("Red caviar")] = 10,
+			[new ProductsInShop("Сottage cheese")] = 7,
+			[new ProductsInShop("Cake Napoleon")] = 3,
+			[new ProductsInShop("Sausage")] = 6,
+		};
+
+		foreach (KeyValuePair<Product, int> product in productAvailable)
+		{
+			Console.WriteLine($"{product.Key}, Count = {product.Value}");
+		}
+
+		foreach (KeyValuePair<Product, int> product in productAvailable)
+		{
+			Console.WriteLine($"{product.Key}");
+		}
+
+		foreach (KeyValuePair<Product, int> product in productAvailable)
+		{
+			Console.WriteLine($"Price:{product.Value}");
+		}
+
+		//write a Dictionary to List conversion.
+		//https://www.techiedelight.com/ru/convert-dictionary-to-a-list-in-csharp/
+		List<KeyValuePair<Product, int>> coversionDictionaryToList = productAvailable.ToList();
+
+		Console.WriteLine(String.Join(",\n", coversionDictionaryToList));
+
+		//Write a List to Dictionary conversion.
+		//https://learn.microsoft.com/ru-ru/dotnet/api/system.linq.enumerable.todictionary?view=net-7.0
+		List<Product> products_3 = new List<Product>()
+		{
+			new ProductsInShop("Shrimps frozen", 40.5),
+			new ProductsInShop("Salmon steak frozen", 70),
+			new ProductsInShop("Black caviar", 150),
+			new ProductsInShop("Almond croissant", 9),
+			new ProductsInShop("Cake Napoleon", 45.5),
+			new ProductsInShop("Cheezecake", 34),
+		};
+
+		products_3.Sort();
+
+		Dictionary<double, Product> coversionListToDictionary = products_3.ToDictionary(x => x.Price);
+
+		foreach (KeyValuePair<double, Product> product in coversionListToDictionary)
+		{
+			Console.WriteLine($"Price: {product.Key}, {product.Value}");
+		}
+
+		//HomeTask 1 lesson 8
+		//var form_Correct = AuthorizationForm.CheckException("Anastasiya", "test1", "test1");
+		//var loginIncorrect = AuthorizationForm.CheckException("Kate ", "newss1", "newss1");
+		//var passwordIncorrect = AuthorizationForm.CheckException("Violeta", "testpassword", "testpassword");
+		//var confirmationPassworddIncorrect = AuthorizationForm.CheckException("Maksim", "check0425ddd!newd", "check0425dd!newdd");
+
+		//Console.WriteLine(form_Correct);
+		//Console.WriteLine(loginIncorrect);
+		//Console.WriteLine(passwordIncorrect);
+		//Console.WriteLine(confirmationPassworddIncorrect);
 
 		//HomeTask 1 lesson 7
 		//Public autopark
