@@ -87,11 +87,17 @@ namespace VS_21_February.Task9
 		int IComparable<Product>.CompareTo(Product? other)
 		{
 			if (other.Price > this.Price)
+			{
 				return -1;
+			}
 			else if (other.Price == this.Price)
+			{
 				return 0;
+			}		
 			else
+			{
 				return 1;
+			}				
 		}
 
 		public override string ToString()
