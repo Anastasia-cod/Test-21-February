@@ -9,16 +9,21 @@ class Hello
 		GenericClass<string> array = new GenericClass<string>();
 		array.AddItemToArray("Add");
 		array.AddItemToArray("Remove");
-		array.AddItemToArray("New Item");
+		array.AddItemToArray("New");
+		array.AddItemToArray("item");
 		array.AddItemToArray("Test");
 		array.AddItemToArray("22 March");
 		array.AddItemToArray("Remove new");
 
 		Console.WriteLine(array.ArrayLength());
 
-		array.RemoveItemFromArray("Remove");
+		array.RemoveItemFromArray("New");
 
 		Console.WriteLine(array.ArrayLength());
+
+		array.GetItemByIndex(2);
+		array.GetItemByIndex(4);
+		array.GetItemByIndex(9);
 
 		//Home task 1 lesson 10
 		////Home task 0.1 lesson 9
