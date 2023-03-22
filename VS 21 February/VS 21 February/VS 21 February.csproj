@@ -15,6 +15,7 @@
     <None Remove="Task 7.1 autopark\" />
     <None Remove="Task8.1 exception\" />
     <None Remove="Task 9\" />
+    <None Remove="Task 10\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Hometask 3-5\" />
@@ -23,6 +24,7 @@
     <Folder Include="Task 7.1 autopark\" />
     <Folder Include="Task8.1 exception\" />
     <Folder Include="Task 9\" />
+    <Folder Include="Task 10\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" />
