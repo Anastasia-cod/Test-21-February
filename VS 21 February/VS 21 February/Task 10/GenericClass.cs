@@ -7,7 +7,7 @@ namespace VS_21_February.Task10
 
 		public GenericClass()
 		{
-			array = new T[0];
+			array = Array.Empty<T>();
 		}
 
 		/// <summary>

@@ -11,25 +11,25 @@ class Hello
 {
 	static void Main(string[] args)
 	{
-		////Home task 1 lesson 10
-		//GenericClass<string> array = new GenericClass<string>();
-		//array.AddItemToArray("Add");
-		//array.AddItemToArray("Remove");
-		//array.AddItemToArray("New");
-		//array.AddItemToArray("item");
-		//array.AddItemToArray("Test");
-		//array.AddItemToArray("22 March");
-		//array.AddItemToArray("Remove new");
+		//Home task 1 lesson 10
+		GenericClass<string> array = new GenericClass<string>();
+		array.AddItemToArray("Add");
+		array.AddItemToArray("Remove");
+		array.AddItemToArray("New");
+		array.AddItemToArray("item");
+		array.AddItemToArray("Test");
+		array.AddItemToArray("22 March");
+		array.AddItemToArray("Remove new");
 
-		//Console.WriteLine(array.ArrayLength());
+		Console.WriteLine(array.ArrayLength());
 
-		//array.RemoveItemFromArray("New");
+		array.RemoveItemFromArray("New");
 
-		//Console.WriteLine(array.ArrayLength());
+		Console.WriteLine(array.ArrayLength());
 
-		//array.GetItemByIndex(2);
-		//array.GetItemByIndex(4);
-		//array.GetItemByIndex(9);
+		array.GetItemByIndex(2);
+		array.GetItemByIndex(4);
+		array.GetItemByIndex(9);
 
 		//Home task 3 lesson 10
 		Point<int> pointInt = new Point<int>(10, 20);
