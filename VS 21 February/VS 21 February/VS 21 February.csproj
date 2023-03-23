@@ -17,7 +17,7 @@
     <None Remove="Task 9\" />
     <None Remove="Task 10\" />
     <None Remove="Task 10\Task 10.2 car and engine\" />
-    <None Remove="Task 10.3 point\" />
+    <None Remove="Task 10\Task 10.3 point\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Hometask 3-5\" />
@@ -28,7 +28,7 @@
     <Folder Include="Task 9\" />
     <Folder Include="Task 10\" />
     <Folder Include="Task 10\Task 10.2 car and engine\" />
-    <Folder Include="Task 10.3 point\" />
+    <Folder Include="Task 10\Task 10.3 point\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" />
