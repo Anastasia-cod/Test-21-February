@@ -5,6 +5,8 @@ using Microsoft.VisualBasic;
 using VS_21_February.Task10;
 using VS_21_February.Task10.Task10.carandengine;
 using VS_21_February.Task10.point;
+using System.Collections.Generic;
+
 class Hello
 {
 	static void Main(string[] args)
@@ -31,8 +33,10 @@ class Hello
 
 		//Home task 3 lesson 10
 		Point<int> pointInt = new Point<int>(10, 20);
-
+		Point<int> pointInt_2 = new Point<int>(15, 21);
 		pointInt.GetInfo();
+
+		pointInt.GetDistanceBetweenTwoPoints(pointInt, pointInt_2);
 
 		////Home task 0.1 lesson 9
 		//ArrayList list = new ArrayList();
