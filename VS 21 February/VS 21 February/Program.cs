@@ -31,6 +31,23 @@ class Hello
 		array.GetItemByIndex(4);
 		array.GetItemByIndex(9);
 
+		//Home task 2 lesson 10
+		Engine dieselEngine = new DieselEngine();
+		Engine petrollEngine = new PetrolEngine();
+		Engine electroEngine = new ElectroEngine();
+
+		Car<string> car_diesel = new Car<string>(dieselEngine, "Mersedes GLC 350", 25.4);
+		car_diesel.MoveCar();
+		car_diesel.FillUpTheTank();
+
+		Car<string> car_petrol = new Car<string>(petrollEngine, "Mersedes SlC 220", 45.2);
+		car_petrol.MoveCar();
+		car_petrol.FillUpTheTank();
+
+		Car<string> car_electro = new Car<string>(electroEngine, "Tesla LS2", 75);
+		car_electro.MoveCar();
+		car_electro.FillUpTheTank();
+
 		//Home task 3 lesson 10
 		Point<int> pointInt = new Point<int>(10, 20);
 		Point<int> pointInt_2 = new Point<int>(15, 21);

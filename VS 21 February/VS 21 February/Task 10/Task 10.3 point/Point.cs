@@ -46,7 +46,7 @@ namespace VS_21_February.Task10.point
 
 			var distanceBetweenTwoPoint = Math.Sqrt(Math.Pow((x_First - x_Second), 2) + Math.Pow((y_First - y_Second), 2));
 
-			Console.WriteLine($"Distance beetween two point: {distanceBetweenTwoPoint}");
+			Console.WriteLine($"Distance beetween two points: {distanceBetweenTwoPoint}");
 		}
 	}
 }
