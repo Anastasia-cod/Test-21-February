@@ -6,11 +6,19 @@ using VS_21_February.Task10;
 using VS_21_February.Task10.Task10.carandengine;
 using VS_21_February.Task10.point;
 using System.Collections.Generic;
+using VS_21_February.Task10.Additionaltask;
 
 class Hello
 {
 	static void Main(string[] args)
 	{
+		//Additional task - find value next after max value in integer array
+		int[] intArray = { 2, 1, 5, 3, 4, 5 };
+
+		ArrayAdditionalTask array_1 = new ArrayAdditionalTask(intArray);
+		array_1.SortedArray();
+		array_1.DeleteDublicateAndGetValueAfterMax();
+
 		//Home task 1 lesson 10
 		GenericClass<string> array = new GenericClass<string>();
 		array.AddItemToArray("Add");
