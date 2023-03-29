@@ -15,7 +15,7 @@ class Hello
 
         static void ShowPrice(int price)
         {
-            Console.WriteLine($"The average price is: {price}");
+            Console.WriteLine($"The average price is {price}.");
         }
 
         ////Additional task - find value next after max value in integer array
