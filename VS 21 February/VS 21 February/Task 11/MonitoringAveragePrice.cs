@@ -11,9 +11,9 @@ namespace VS_21_February.Task11
             this.showPrice = showPrice;
         }
 
-        public void GetAvarageMonitorPrice()
+        public void GetAvarageMonitorPriceFor2RoomFlat()
         {
-            int price = (randomPrice.Next(70000, 150000) + randomPrice.Next(25000, 50000)/ 2);
+            int price = (randomPrice.Next(46000, 125000) + randomPrice.Next(25000, 45000)/ 2);
             showPrice(price);
         }
     }

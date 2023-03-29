@@ -12,11 +12,11 @@ class Hello
         //Home task 1 lesson11
         MonitoringAveragePrice monitor = new MonitoringAveragePrice(ShowPrice);
 
-        monitor.GetAvarageMonitorPrice();
+        monitor.GetAvarageMonitorPriceFor2RoomFlat();
 
         static void ShowPrice(int price)
         {
-            Console.WriteLine($"The average price is {price}.");
+            Console.WriteLine($"The average price of 2-room flat in Belarus is {price}$ .");
         }
 
         ////Additional task - find value next after max value in integer array
