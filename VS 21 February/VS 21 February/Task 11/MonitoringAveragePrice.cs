@@ -11,11 +11,10 @@ namespace VS_21_February.Task11
             this.showPrice = showPrice;
         }
 
-        public void MonitorPrice(double minPrice, double maxPrice)
+        public void GetAvarageMonitorPrice()
         {
-            double price = randomPrice.NextDouble() * (maxPrice - minPrice);
-
-            showPrice((int)Math.Round(price));
+            int price = (randomPrice.Next(70000, 150000) + randomPrice.Next(25000, 50000)/ 2);
+            showPrice(price);
         }
     }
 }

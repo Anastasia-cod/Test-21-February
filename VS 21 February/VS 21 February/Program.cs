@@ -9,9 +9,10 @@ class Hello
 {
     static void Main(string[] args)
     {
+        //Home task 1 lesson11
         MonitoringAveragePrice monitor = new MonitoringAveragePrice(ShowPrice);
 
-        monitor.MonitorPrice(35000, 200000);
+        monitor.GetAvarageMonitorPrice();
 
         static void ShowPrice(int price)
         {
