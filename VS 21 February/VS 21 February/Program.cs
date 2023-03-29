@@ -2,66 +2,72 @@ using System;
 using System.Collections;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
-using VS_21_February.Task10;
-using VS_21_February.Task10.Task10.carandengine;
-using VS_21_February.Task10.point;
 using System.Collections.Generic;
-using VS_21_February.Task10.Additionaltask;
+using VS_21_February.Task11;
 
 class Hello
 {
     static void Main(string[] args)
     {
-        //Additional task - find value next after max value in integer array
-        int[] intArray = { 2, 1, 5, 3, 4, 5 };
+        MonitoringAveragePrice monitor = new MonitoringAveragePrice(ShowPrice);
 
-        ArrayAdditionalTask array_1 = new ArrayAdditionalTask(intArray);
-        array_1.SortedArray();
-        array_1.DeleteDublicateAndGetValueAfterMax();
+        monitor.MonitorPrice(35000, 200000);
 
-        //Home task 1 lesson 10
-        GenericClass<string> array = new GenericClass<string>();
-        array.AddItemToArray("Add");
-        array.AddItemToArray("Remove");
-        array.AddItemToArray("New");
-        array.AddItemToArray("item");
-        array.AddItemToArray("Test");
-        array.AddItemToArray("22 March");
-        array.AddItemToArray("Remove new");
+        static void ShowPrice(int price)
+        {
+            Console.WriteLine($"The average price is: {price}");
+        }
 
-        Console.WriteLine(array.ArrayLength());
+        ////Additional task - find value next after max value in integer array
+        //int[] intArray = { 2, 1, 5, 3, 4, 5 };
 
-        array.RemoveItemFromArray("New");
+        //ArrayAdditionalTask array_1 = new ArrayAdditionalTask(intArray);
+        //array_1.SortedArray();
+        //array_1.DeleteDublicateAndGetValueAfterMax();
 
-        Console.WriteLine(array.ArrayLength());
+        ////Home task 1 lesson 10
+        //GenericClass<string> array = new GenericClass<string>();
+        //array.AddItemToArray("Add");
+        //array.AddItemToArray("Remove");
+        //array.AddItemToArray("New");
+        //array.AddItemToArray("item");
+        //array.AddItemToArray("Test");
+        //array.AddItemToArray("22 March");
+        //array.AddItemToArray("Remove new");
 
-        array.GetItemByIndex(2);
-        array.GetItemByIndex(4);
-        array.GetItemByIndex(9);
+        //Console.WriteLine(array.ArrayLength());
 
-        //Home task 2 lesson 10
-        Engine dieselEngine = new DieselEngine();
-        Engine petrollEngine = new PetrolEngine();
-        Engine electroEngine = new ElectroEngine();
+        //array.RemoveItemFromArray("New");
 
-        Car<string> car_diesel = new Car<string>(dieselEngine, "Mersedes GLC 350", 25.4);
-        car_diesel.MoveCar();
-        car_diesel.FillUpTheTank();
+        //Console.WriteLine(array.ArrayLength());
 
-        Car<string> car_petrol = new Car<string>(petrollEngine, "Mersedes SlC 220", 45.2);
-        car_petrol.MoveCar();
-        car_petrol.FillUpTheTank();
+        //array.GetItemByIndex(2);
+        //array.GetItemByIndex(4);
+        //array.GetItemByIndex(9);
 
-        Car<string> car_electro = new Car<string>(electroEngine, "Tesla LS2", 75);
-        car_electro.MoveCar();
-        car_electro.FillUpTheTank();
+        ////Home task 2 lesson 10
+        //Engine dieselEngine = new DieselEngine();
+        //Engine petrollEngine = new PetrolEngine();
+        //Engine electroEngine = new ElectroEngine();
 
-        //Home task 3 lesson 10
-        Point<int> pointInt = new Point<int>(10, 20);
-        Point<int> pointInt_2 = new Point<int>(15, 21);
-        pointInt.GetInfo();
+        //Car<string> car_diesel = new Car<string>(dieselEngine, "Mersedes GLC 350", 25.4);
+        //car_diesel.MoveCar();
+        //car_diesel.FillUpTheTank();
 
-        pointInt.GetDistanceBetweenTwoPoints(pointInt, pointInt_2);
+        //Car<string> car_petrol = new Car<string>(petrollEngine, "Mersedes SlC 220", 45.2);
+        //car_petrol.MoveCar();
+        //car_petrol.FillUpTheTank();
+
+        //Car<string> car_electro = new Car<string>(electroEngine, "Tesla LS2", 75);
+        //car_electro.MoveCar();
+        //car_electro.FillUpTheTank();
+
+        ////Home task 3 lesson 10
+        //Point<int> pointInt = new Point<int>(10, 20);
+        //Point<int> pointInt_2 = new Point<int>(15, 21);
+        //pointInt.GetInfo();
+
+        //pointInt.GetDistanceBetweenTwoPoints(pointInt, pointInt_2);
 
         ////Home task 0.1 lesson 9
         //ArrayList list = new ArrayList();
