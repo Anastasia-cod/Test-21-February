@@ -8,6 +8,8 @@ using System.Threading;
 
 public delegate void PriceDelegate(int price);
 
+public delegate void Monitor_PriceDecreased();
+
 class Hello
 {
     static void Main(string[] args)
@@ -27,7 +29,7 @@ class Hello
             Console.WriteLine($"The average price of 2-room flat in Minsk is {price}$");
         }
 
-        static void Monitor_PriceDecreased(object sender, EventArgs e)
+        static void Monitor_PriceDecreased()
         {
             Console.WriteLine($"The average price for a 2-room apartment in Minsk has been reduced to < 66000$\n");
         }

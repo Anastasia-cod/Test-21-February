@@ -3,7 +3,7 @@ namespace VS_21_February.Task11
 {
     public class MonitoringAveragePrice
     {
-        public event EventHandler PriceDecreased;
+        public event Monitor_PriceDecreased PriceDecreased;
         private PriceDelegate priceDelegate;
 
         private int minPrice = 45000;
@@ -34,7 +34,7 @@ namespace VS_21_February.Task11
 
         protected virtual void AddEventPriceDecreased()
         {
-            PriceDecreased?.Invoke(this, EventArgs.Empty);
+            PriceDecreased?.Invoke();
         }
     }
 }
