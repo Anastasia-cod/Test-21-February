@@ -4,18 +4,32 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using System.Collections.Generic;
 using VS_21_February.Task11;
+using System.Threading;
+
+public delegate void PriceDelegate(int price);
 
 class Hello
 {
     static void Main(string[] args)
     {
-        MonitoringAveragePrice monitor = new MonitoringAveragePrice(ShowPrice);
+        //Home task 1 lesson11
+        MonitoringAveragePrice monitoring = new MonitoringAveragePrice(ShowPrice);
 
-        monitor.MonitorPrice(35000, 200000);
+        monitoring.PriceDecreased += Monitor_PriceDecreased;
+
+        for (int i = 0; i < 10; i++)
+        {
+            monitoring.UpdatePrice();
+        }
 
         static void ShowPrice(int price)
         {
-            Console.WriteLine($"The average price is: {price}");
+            Console.WriteLine($"The average price of 2-room flat in Minsk is {price}$");
+        }
+
+        static void Monitor_PriceDecreased()
+        {
+            Console.WriteLine($"The average price for a 2-room apartment in Minsk has been reduced to < 66000$\n");
         }
 
         ////Additional task - find value next after max value in integer array

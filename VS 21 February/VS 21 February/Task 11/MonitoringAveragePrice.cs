@@ -3,19 +3,38 @@ namespace VS_21_February.Task11
 {
     public class MonitoringAveragePrice
     {
-        public Random randomPrice = new Random();
-        public Action<int> showPrice;
+        public event Action PriceDecreased;
+        private PriceDelegate priceDelegate;
 
-        public MonitoringAveragePrice(Action<int> showPrice)
+        private int minPrice = 45000;
+        private int maxPrice = 125000;
+        private int currentPrice;
+
+        public MonitoringAveragePrice(PriceDelegate priceDelegate)
         {
-            this.showPrice = showPrice;
+            this.priceDelegate = priceDelegate;
+            Random random = new Random();
+            currentPrice = random.Next(minPrice, maxPrice);
         }
 
-        public void MonitorPrice(double minPrice, double maxPrice)
+        public void UpdatePrice()
         {
-            double price = randomPrice.NextDouble() * (maxPrice - minPrice);
+            Random random = new Random();
+            int priceChange = random.Next(-10000, 10000);
 
-            showPrice((int)Math.Round(price));
+            currentPrice += priceChange;
+
+            priceDelegate(currentPrice);
+
+            if (currentPrice < 66000)
+            {
+                AddEventPriceDecreased();
+            }
+        }
+
+        protected virtual void AddEventPriceDecreased()
+        {
+            PriceDecreased?.Invoke();
         }
     }
 }
