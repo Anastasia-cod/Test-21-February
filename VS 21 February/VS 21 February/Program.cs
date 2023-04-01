@@ -8,8 +8,6 @@ using System.Threading;
 
 public delegate void PriceDelegate(int price);
 
-public delegate void Monitor_PriceDecreased();
-
 class Hello
 {
     static void Main(string[] args)

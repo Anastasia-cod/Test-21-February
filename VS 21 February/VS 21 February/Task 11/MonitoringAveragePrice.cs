@@ -3,7 +3,7 @@ namespace VS_21_February.Task11
 {
     public class MonitoringAveragePrice
     {
-        public event Monitor_PriceDecreased PriceDecreased;
+        public event Action PriceDecreased;
         private PriceDelegate priceDelegate;
 
         private int minPrice = 45000;
