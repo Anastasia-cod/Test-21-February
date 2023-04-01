@@ -22,7 +22,7 @@ class Hello
         method_array.GetFirstWord();
         method_array.GetLastWord();
 
-        Console.WriteLine($"\nThe word more than min and less than max is: {method_array.GetWordByCondition(21, 23)}\n");
+        Console.WriteLine($"\nThe last word that lenght more than min and less than max is: {method_array.GetWordByCondition(3, 7)}\n");
 
         Console.WriteLine($"Count of unique value: {method_array.GetCountOfUniqueValue()}\n");
 
@@ -47,6 +47,26 @@ class Hello
         };
 
         Methods.DictionaryToListAndChangePlace(dictionary);
+
+        //Home task 2 lesson 12
+        var users = new List<User>()
+        {
+            new User("Michael", "Birne"),
+            new User("Ekaterina", "Jeron"),
+            new User("Ilya", "Wersi"),
+            new User("Marya", "Aleksandrovna", "Toff"),
+            new User("Vera", "Vitalyevna", "Chisert"),
+        };
+
+        User listOfUsers = new User(users);
+
+        Console.WriteLine($"\nThe List of Users:\n");
+
+        listOfUsers.GetInfo();
+
+        Console.WriteLine($"\nNew List of Users ordered Descending by Last Name:\n");
+
+        listOfUsers.GetOrderedByDesc();
 
         ////Home task 1 lesson11
         //MonitoringAveragePrice monitoring = new MonitoringAveragePrice(ShowPrice);
