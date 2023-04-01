@@ -20,6 +20,7 @@
     <None Remove="Task 10\Task 10.3 point\" />
     <None Remove="Task 10\Additional task\" />
     <None Remove="Task 11\" />
+    <None Remove="Task 12 LINQ\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Hometask 3-5\" />
@@ -33,6 +34,7 @@
     <Folder Include="Task 10\Task 10.3 point\" />
     <Folder Include="Task 10\Additional task\" />
     <Folder Include="Task 11\" />
+    <Folder Include="Task 12 LINQ\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" />
