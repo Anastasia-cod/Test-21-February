@@ -5,6 +5,8 @@ using Microsoft.VisualBasic;
 using System.Collections.Generic;
 using VS_21_February.Task11;
 using System.Threading;
+using VS_21_February.Task12LINQ;
+using VS_21_February.Task9;
 
 public delegate void PriceDelegate(int price);
 
@@ -12,25 +14,79 @@ class Hello
 {
     static void Main(string[] args)
     {
-        //Home task 1 lesson11
-        MonitoringAveragePrice monitoring = new MonitoringAveragePrice(ShowPrice);
+        //HomeTask 1 Lesson 12
+        string[] array = { "new", "1", "array", "test", "video", "new", "0", "test", "a", "pereezd", "new", "calendar", "balm", "weearing", "prepositioneer", "video" };
 
-        monitoring.PriceDecreased += Monitor_PriceDecreased;
+        Methods method_array = new Methods(array);
 
-        for (int i = 0; i < 10; i++)
+        method_array.GetFirstWord();
+        method_array.GetLastWord();
+
+        Console.WriteLine($"\nThe last word that lenght more than min and less than max is: {method_array.GetWordByCondition(3, 7)}\n");
+
+        Console.WriteLine($"Count of unique value: {method_array.GetCountOfUniqueValue()}\n");
+
+        List<int> list = new List<int>() { 12, 475, 84, 53, 93, 753, 0, 54, 33, 43, 903, 13, 133, 1052, 54 };
+        Methods method_int = new Methods(list);
+
+        method_int.GetValuesByCondition();
+
+        string[] array_2 = { "Telecomunication", "VideoLabs", "Participation", "Quandary" };
+
+        Methods method_new = new Methods(array_2);
+
+        Console.WriteLine($"\nCount of shortest word: {method_new.GetCountOfShortestWord()}\n");
+
+        Dictionary<string, int> dictionary = new Dictionary<string, int>()
         {
-            monitoring.UpdatePrice();
-        }
+            {"First", 1 },
+            {"Second", 2 },
+            {"Third", 3 },
+            {"Fourth", 4 },
+            {"Fifth", 5 },
+        };
 
-        static void ShowPrice(int price)
-        {
-            Console.WriteLine($"The average price of 2-room flat in Minsk is {price}$");
-        }
+        Methods.DictionaryToListAndChangePlace(dictionary);
 
-        static void Monitor_PriceDecreased()
+        //Home task 2 lesson 12
+        var users = new List<User>()
         {
-            Console.WriteLine($"The average price for a 2-room apartment in Minsk has been reduced to < 66000$\n");
-        }
+            new User("Michael", "Birne"),
+            new User("Ekaterina", "Jeron"),
+            new User("Ilya", "Wersi"),
+            new User("Marya", "Aleksandrovna", "Toff"),
+            new User("Vera", "Vitalyevna", "Chisert"),
+        };
+
+        User listOfUsers = new User(users);
+
+        Console.WriteLine($"\nThe List of Users:\n");
+
+        listOfUsers.GetInfo();
+
+        Console.WriteLine($"\nNew List of Users ordered Descending by Last Name:\n");
+
+        listOfUsers.GetOrderedByDesc();
+
+        ////Home task 1 lesson11
+        //MonitoringAveragePrice monitoring = new MonitoringAveragePrice(ShowPrice);
+
+        //monitoring.PriceDecreased += Monitor_PriceDecreased;
+
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    monitoring.UpdatePrice();
+        //}
+
+        //static void ShowPrice(int price)
+        //{
+        //    Console.WriteLine($"The average price of 2-room flat in Minsk is {price}$");
+        //}
+
+        //static void Monitor_PriceDecreased()
+        //{
+        //    Console.WriteLine($"The average price for a 2-room apartment in Minsk has been reduced to < 66000$\n");
+        //}
 
         ////Additional task - find value next after max value in integer array
         //int[] intArray = { 2, 1, 5, 3, 4, 5 };
